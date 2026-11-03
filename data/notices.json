@@ -1,0 +1,478 @@
+{
+  "updatedAt": "2026-11-03",
+  "sources": [
+    {
+      "key": "gyeryong-notice",
+      "org": "계룡시청",
+      "url": "https://gyeryong.go.kr/kr/html/sub03/030101.html",
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
+    },
+    {
+      "key": "gyeryong-gosi",
+      "org": "계룡시청",
+      "url": "https://gyeryong.go.kr/kr/html/sub03/030102.html",
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
+    },
+    {
+      "key": "gryouth-star",
+      "org": "계룡시청소년별마루센터",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "ok": true,
+      "read": 4,
+      "kept": 4
+    },
+    {
+      "key": "cnnse-40",
+      "org": "충청남도논산계룡교육지원청",
+      "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
+      "ok": true,
+      "read": 10,
+      "kept": 0
+    },
+    {
+      "key": "cnnse-199",
+      "org": "충청남도논산계룡교육지원청",
+      "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
+      "ok": true,
+      "read": 10,
+      "kept": 3
+    },
+    {
+      "key": "icec",
+      "org": "충청남도교육청진로융합교육원",
+      "url": "http://icec.cne.go.kr/home/board/brdList.do?menu_cd=000041",
+      "ok": true,
+      "read": 10,
+      "kept": 5
+    },
+    {
+      "key": "chsl",
+      "org": "충청남도교육청학생교육문화원",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121",
+      "ok": true,
+      "read": 26,
+      "kept": 7
+    },
+    {
+      "key": "cle",
+      "org": "충청남도교육청평생교육원",
+      "url": "http://cle.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003",
+      "ok": true,
+      "read": 16,
+      "kept": 5
+    },
+    {
+      "key": "cnbl",
+      "org": "충청남도교육청남부평생교육원",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139",
+      "ok": true,
+      "read": 19,
+      "kept": 5
+    },
+    {
+      "key": "cnse-gifted",
+      "org": "충청남도교육청과학교육원",
+      "url": "https://www.cnse.or.kr/main/board/list.action?q=d93832d83fa7d414e3be7ada72de790793969fbac8b6b987b03c1e741c5ea8eb",
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
+    },
+    {
+      "key": "cnse-notice",
+      "org": "충청남도교육청과학교육원",
+      "url": "https://www.cnse.or.kr/main/board/list.action?q=d636ce2d19a523b2924c63232c3cae51ff9282aeab77ec41cdfaf1fdd875101a",
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
+    },
+    {
+      "key": "pass-activity",
+      "org": "충청남도청소년활동진흥센터",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
+      "ok": true,
+      "read": 13,
+      "kept": 3
+    },
+    {
+      "key": "pass-counsel",
+      "org": "충청남도청소년상담복지센터",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038",
+      "ok": true,
+      "read": 10,
+      "kept": 0
+    },
+    {
+      "key": "science",
+      "org": "국립중앙과학관",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttList.do",
+      "ok": true,
+      "read": 12,
+      "kept": 12
+    }
+  ],
+  "notices": [
+    {
+      "id": "science-d0ab3c0c2fb7",
+      "title": "2026 대한민국 월드리그 조류」 탐조 교육·체험 교실 안내",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=50299",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "gryouth-star-476f63133778",
+      "title": "2026 별마루 생일 이벤트 '너의 생일을 축하해' (12월 생일자 신청)",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "date": "2026-11-01",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "icec-740e5f83ce1d",
+      "title": "[“꿈을 잇고, 미래를 열다!”]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-31",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=742",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "gryouth-star-bf2bf7187255",
+      "title": "2026년 스마트빌리지 코딩교실3",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "date": "2026-10-29",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-8594e428242e",
+      "title": "2026 탄동천 생물다양성 탐사대작전",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-10-24",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49261",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnbl-0c311712d9af",
+      "title": "11월 토요 책 놀이터 참여 가족 모집",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-23",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=771589",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnbl-d22f52d8c0ea",
+      "title": "우리 가족 토요책빵 11월 참여 가족 모집",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-22",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=771511",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "icec-f658b27cb3cc",
+      "title": "[충청남도교육청진로융합교육원, 「2026 아산권역 보호자 진로진학 공부방」운영]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-21",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=736",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "icec-a4325d7ab8fe",
+      "title": "2026 진로이음의 날[10. 31.(토)] 운영",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-20",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=734",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "icec-7fc9c4a14a68",
+      "title": "[충청남도교육청진로융합교육원, 학교로 찾아가는 중3 진학소통마당 본격 운영]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-20",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=733",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-fa94290b9c40",
+      "title": "2026년 11월 미래인재 주말과학교실 안내",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-10-14",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49246",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "icec-981d8ae15d4d",
+      "title": "[충청남도교육청진로융합교육원, 「학교생활기록부 기반 면접 준비」 프로그램 자체 개발·보급]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-12",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=731",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnnse-199-93275fb2954d",
+      "title": "2027학년도 중학교 전편입학 업무 시행 계획",
+      "org": "충청남도논산계룡교육지원청",
+      "region": "충남·계룡",
+      "date": "2026-10-08",
+      "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283197",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnnse-199-3be49c896050",
+      "title": "2027학년도 중학교 입학배정 업무 추진 계획",
+      "org": "충청남도논산계룡교육지원청",
+      "region": "충남·계룡",
+      "date": "2026-10-08",
+      "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283196",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cle-3cccd3b537b2",
+      "title": "2026년 평생학습축제 운영 안내",
+      "org": "충청남도교육청평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-08",
+      "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=760534",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "chsl-9bf0ce7bba29",
+      "title": "2027년 충남학생교육문화원 예술영재교육원 영재교육대상자 선발 전형 세부 요강",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "date": "2026-10-07",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=760399",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "pass-activity-259fd3c37c16",
+      "title": "[안내] 2026년 청소년 디지털 시민성 함양 활동 프로그램 우수사례 공모전 안내",
+      "org": "충청남도청소년활동진흥센터",
+      "region": "충남·계룡",
+      "date": "2026-10-06",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3631&tag=&nPage=1",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "pass-activity-1e980ff93b67",
+      "title": "[안내] 2026년 청소년 핵심역량 기반 우수 PBL 모델 공모전 안내",
+      "org": "충청남도청소년활동진흥센터",
+      "region": "충남·계룡",
+      "date": "2026-10-06",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3632&tag=&nPage=1",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnnse-199-0a51fc7fcb03",
+      "title": "2027학년도 충청남도논산계룡교육지원청영재교육원 선발 전형요강 안내",
+      "org": "충청남도논산계룡교육지원청",
+      "region": "충남·계룡",
+      "date": "2026-10-02",
+      "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283109",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cle-7e7f4292d28b",
+      "title": "2026년 책으로 만나는 독립의 길 2차 문화체험 신청 안내",
+      "org": "충청남도교육청평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-10-02",
+      "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=754424",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "gryouth-star-9e732d3f9c64",
+      "title": "2026 별마루 생일 이벤트 '너의 생일을 축하해' (11월 생일자 신청)",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "date": "2026-10-01",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "gryouth-star-8a8e2f6818b3",
+      "title": "[대기자 접수중]드론 첫걸음 'youth drone up'",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "date": "2026-09-30",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnbl-a7399e5f1756",
+      "title": "우리 가족 토요책빵 10월 참여 가족 모집",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-09-28",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=753584",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cle-8a12a99bba13",
+      "title": "2026년 평생학습축제 학습자 발표회 공연 신청 및 전시 작품 제출 안내",
+      "org": "충청남도교육청평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-09-22",
+      "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=753015",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "pass-activity-4062cff510d7",
+      "title": "2026년 청소년 그룹활동 지원 인문 프로젝트 공모 안내",
+      "org": "충청남도청소년활동진흥센터",
+      "region": "충남·계룡",
+      "date": "2026-09-21",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3610&tag=&nPage=1",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "cnbl-a06b6c770e72",
+      "title": "10월 토요 책 놀이터 참여 가족 모집",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "date": "2026-09-21",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=752807",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-b7f5292ad15a",
+      "title": "2026년 10월 미래인재 주말과학교실 안내",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-09-09",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49213",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "chsl-d91c4721b345",
+      "title": "2026년 독서의 달 문학기행 모집 안내",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "date": "2026-09-03",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=740028",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "chsl-49d26027c8b7",
+      "title": "2026 학생연주단 정기연주회 협연자 모집 공고",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "date": "2026-08-21",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=736364",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-0b3946bfb576",
+      "title": "2026년 9월 미래인재 주말과학교실 안내",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-08-12",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49164",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-54d6861990fc",
+      "title": "2026년 여름방학 과학캠프 운영",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-07-28",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49106",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-48d6e0944fe5",
+      "title": "2026년 여름방학 미래인재과학교실 운영 안내",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-07-28",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49116",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-6979dd015c84",
+      "title": "<자연 예술 아카데미> 작은 자연, 테라리움",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-07-18",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49126",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-f2b54728797c",
+      "title": "2026년 과학적 글쓰기 교실",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-07-11",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49080",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "chsl-b308bea71531",
+      "title": "2026 학생연주단 여름방학 집중 수업 가정통신문",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "date": "2026-06-27",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=699066",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-7fa148788efd",
+      "title": "2026년 1차 희귀동식물 탐사원정대",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-06-20",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49091",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "science-9605d9e47155",
+      "title": "2026년 7월 미래인재 주말과학교실 안내",
+      "org": "국립중앙과학관",
+      "region": "대전",
+      "date": "2026-06-10",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49075",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "chsl-de9b6f19d694",
+      "title": "2026 학생연주단 단원 추가 모집 공고",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "date": "2026-06-04",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=683461",
+      "firstSeen": "2026-11-03"
+    },
+    {
+      "id": "chsl-151f6e887acd",
+      "title": "2026 학생연주단 국외예술체험 안내 가정통신문",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "date": "2026-05-09",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=665240",
+      "firstSeen": "2026-11-03"
+    }
+  ]
+}

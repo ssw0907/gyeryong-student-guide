@@ -226,6 +226,7 @@ select, input[type="search"] {
   gap: 8px;
   margin-top: 12px;
 }
+.card-actions.single { grid-template-columns: minmax(0, 1fr); }
 .card-actions .more,
 .card-actions .btn {
   min-height: 40px;
@@ -298,6 +299,11 @@ select, input[type="search"] {
 }
 
 .card-detail[hidden] { display: none; }
+
+.notice-meta { font-size: 0.88rem; color: var(--muted); }
+.notice-meta p { margin: 0 0 6px; }
+.notice-meta p:last-child { margin-bottom: 0; }
+.notice-meta a { color: var(--accent); }
 
 .updated { margin: 10px 0 0; font-size: 0.82rem; color: var(--muted); }
 

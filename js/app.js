@@ -10,22 +10,27 @@
   var TYPES = ['혜택', '프로그램', '장학금'];
   var SCOPES = ['충남 전체', '계룡시'];
   var EVENT_FIELDS = ['과학', '문학', '기타'];
+  var REGIONS = ['충남·계룡', '대전'];
   var BENEFIT_REQUIRED = ['id', 'name', 'type', 'field', 'target', 'content', 'org', 'scope', 'url', 'source', 'checkedAt'];
   var EVENT_REQUIRED = ['id', 'name', 'field', 'target', 'org', 'url', 'source', 'checkedAt', 'residency'];
   var URGENT_DAYS = 7;
+  var NEW_NOTICE_DAYS = 7;
   var UNKNOWN = '확인 필요';
 
   var state = {
     tab: 'benefits',
     bSearch: '', bGrade: '', bType: '', bScope: '', bField: '', bOrg: '', bClosed: false,
-    eGrade: '', eField: '', eFree: false, ePast: false
+    eGrade: '', eField: '', eFree: false, ePast: false,
+    nSearch: '', nRegion: ''
   };
   var benefits = [];
   var events = [];
+  var notices = [];
+  var noticeInfo = null;
 
   var el = {};
   ['tabs', 'filters-benefits', 'filters-events', 'b-search', 'b-grade', 'b-type', 'b-scope', 'b-field', 'b-org', 'b-closed',
-    'e-grade', 'e-field', 'e-free', 'e-past', 'cards', 'result-count', 'empty', 'notice', 'reset-btn', 'empty-reset-btn'
+    'e-grade', 'e-field', 'e-free', 'e-past', 'filters-notices', 'n-search', 'n-region', 'n-meta', 'cards', 'result-count', 'empty', 'notice', 'reset-btn', 'empty-reset-btn'
   ].forEach(function (id) { el[id] = document.getElementById(id); });
 
   /* ---------- 날짜 (한국 시간 기준) ---------- */
@@ -102,6 +107,20 @@
     if (errors.length && !item.id) return errors;
     if (EVENT_FIELDS.indexOf(item.field) === -1) errors.push('field는 ' + EVENT_FIELDS.join(', ') + ' 중 하나여야 합니다');
     if (item.eventStart && item.eventEnd && item.eventStart > item.eventEnd) errors.push('eventStart가 eventEnd보다 늦습니다');
+    return errors;
+  }
+
+  // 자동 수집 공고는 제목·기관·링크만 있으면 표시함
+  function validateNotice(item) {
+    var errors = [];
+    if (!item || typeof item !== 'object') return ['객체 형식이 아닙니다'];
+    ['id', 'title', 'org', 'region', 'url', 'firstSeen'].forEach(function (key) {
+      if (!item[key]) errors.push('"' + key + '" 항목이 비어 있습니다');
+    });
+    if (errors.length) return errors;
+    if (item.date && !isValidDate(item.date)) errors.push('date "' + item.date + '"이(가) YYYY-MM-DD 형식이 아닙니다');
+    if (!isValidDate(item.firstSeen)) errors.push('firstSeen "' + item.firstSeen + '"이(가) YYYY-MM-DD 형식이 아닙니다');
+    if (!/^https?:\/\//.test(String(item.url))) errors.push('url은 http:// 또는 https:// 로 시작해야 합니다');
     return errors;
   }
 
@@ -198,6 +217,19 @@
     return c;
   }
 
+  function noticeStatus(item, today) {
+    var c = Object.assign({}, item);
+    c.sortDate = item.date || item.firstSeen;
+    var isNew = toDayNumber(today) - toDayNumber(c.sortDate) <= NEW_NOTICE_DAYS;
+    c.badge = isNew ? 'open' : 'neutral';
+    c.badgeText = isNew ? '새 공고' : '공고';
+    return c;
+  }
+
+  function compareNotices(a, b) {
+    return b.sortDate.localeCompare(a.sortDate) || a.title.localeCompare(b.title, 'ko');
+  }
+
   function compareBenefits(a, b) {
     if (a.order !== b.order) return a.order - b.order;
     if (a.order < 2) return a.sortKey - b.sortKey;
@@ -244,16 +276,27 @@
     return true;
   }
 
+  function matchesNotice(c) {
+    if (state.nRegion && c.region !== state.nRegion) return false;
+    if (state.nSearch) {
+      var hay = (c.title + ' ' + c.org).toLowerCase();
+      var words = state.nSearch.toLowerCase().split(/\s+/).filter(Boolean);
+      if (!words.every(function (w) { return hay.indexOf(w) !== -1; })) return false;
+    }
+    return true;
+  }
+
   /* ---------- URL 쿼리 ↔ 상태 ---------- */
 
   var QUERY_KEYS = {
     q: 'bSearch', grade: 'bGrade', type: 'bType', scope: 'bScope', field: 'bField', org: 'bOrg',
-    egrade: 'eGrade', efield: 'eField'
+    egrade: 'eGrade', efield: 'eField',
+    nq: 'nSearch', nregion: 'nRegion'
   };
 
   function readQuery() {
     var q = new URLSearchParams(location.search);
-    if (q.get('tab') === 'events') state.tab = 'events';
+    if (q.get('tab') === 'events' || q.get('tab') === 'notices') state.tab = q.get('tab');
     Object.keys(QUERY_KEYS).forEach(function (k) {
       if (q.get(k)) state[QUERY_KEYS[k]] = q.get(k);
     });
@@ -264,7 +307,7 @@
 
   function writeQuery() {
     var q = new URLSearchParams();
-    if (state.tab === 'events') q.set('tab', 'events');
+    if (state.tab !== 'benefits') q.set('tab', state.tab);
     Object.keys(QUERY_KEYS).forEach(function (k) {
       if (state[QUERY_KEYS[k]]) q.set(k, state[QUERY_KEYS[k]]);
     });
@@ -320,7 +363,7 @@
 
   function renderTabs() {
     el.tabs.textContent = '';
-    [['benefits', '충남·계룡 혜택/프로그램/장학금', benefits], ['events', '대전 행사', events]].forEach(function (t) {
+    [['benefits', '충남·계룡 혜택/프로그램/장학금'], ['events', '대전 행사'], ['notices', '최신 공고']].forEach(function (t) {
       var tab = make('button', 'tab', t[1]);
       tab.type = 'button';
       tab.setAttribute('aria-pressed', String(state.tab === t[0]));
@@ -333,10 +376,12 @@
     renderTabs();
     el['filters-benefits'].hidden = state.tab !== 'benefits';
     el['filters-events'].hidden = state.tab !== 'events';
+    el['filters-notices'].hidden = state.tab !== 'notices';
 
     renderChips(el['b-type'], TYPES, state.bType, function (v) { state.bType = v; update(); });
     renderChips(el['b-scope'], SCOPES, state.bScope, function (v) { state.bScope = v; update(); });
     renderChips(el['e-field'], EVENT_FIELDS, state.eField, function (v) { state.eField = v; update(); });
+    renderChips(el['n-region'], REGIONS, state.nRegion, function (v) { state.nRegion = v; update(); });
 
     if (el['b-search'].value !== state.bSearch) el['b-search'].value = state.bSearch;
     el['b-grade'].value = state.bGrade;
@@ -346,6 +391,31 @@
     el['e-grade'].value = state.eGrade;
     el['e-free'].checked = state.eFree;
     el['e-past'].checked = state.ePast;
+    if (el['n-search'].value !== state.nSearch) el['n-search'].value = state.nSearch;
+  }
+
+  // 마지막 수집일과, 자동으로 읽지 못해 직접 확인해야 하는 기관 안내
+  function renderNoticeMeta() {
+    el['n-meta'].textContent = '';
+    if (!noticeInfo) return;
+    el['n-meta'].appendChild(make('p', '', '기관 게시판에서 매일 자동으로 모은 목록입니다. 제목으로만 고르므로 관련 없는 공고가 섞이거나 빠질 수 있으니, 자세한 내용은 공식 링크에서 확인하세요. 마지막 수집 ' + formatDate(noticeInfo.updatedAt)));
+    var seen = {};
+    var missed = (noticeInfo.sources || []).filter(function (s) {
+      if (s.ok || seen[s.org]) return false;
+      seen[s.org] = true;
+      return /^https?:\/\//.test(String(s.url));
+    });
+    if (!missed.length) return;
+    var p = make('p', '', '자동으로 읽지 못해 직접 확인이 필요한 기관: ');
+    missed.forEach(function (s, i) {
+      if (i) p.appendChild(document.createTextNode(', '));
+      var a = make('a', '', s.org);
+      a.href = s.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      p.appendChild(a);
+    });
+    el['n-meta'].appendChild(p);
   }
 
   function addRows(dl, rows) {
@@ -450,18 +520,48 @@
       '공식 링크');
   }
 
+  function noticeCard(c) {
+    var li = make('li', 'card');
+    var head = make('div', 'card-head');
+    var top = make('div', 'card-top');
+    top.appendChild(make('span', 'badge ' + c.badge, c.badgeText));
+    top.appendChild(make('span', 'region', c.region));
+    head.appendChild(top);
+    head.appendChild(make('h2', '', c.title));
+    head.appendChild(make('p', 'organizer', c.org));
+    li.appendChild(head);
+
+    var actions = make('div', 'card-actions single');
+    var a = make('a', 'btn', '공식 링크');
+    a.href = c.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.setAttribute('aria-label', c.title + ' 공식 링크 (새 창)');
+    actions.appendChild(a);
+    li.appendChild(actions);
+
+    li.appendChild(make('p', 'updated', '자동 수집 · ' + (c.date ? '날짜 ' + formatDate(c.date) : '수집일 ' + formatDate(c.firstSeen))));
+    return li;
+  }
+
+  var TAB_VIEWS = {
+    benefits: { items: function () { return benefits.filter(matchesBenefit).sort(compareBenefits); }, render: benefitCard, unit: '개 항목' },
+    events: { items: function () { return events.filter(matchesEvent).sort(compareEvents); }, render: eventCard, unit: '개 행사' },
+    notices: { items: function () { return notices.filter(matchesNotice).sort(compareNotices); }, render: noticeCard, unit: '개 공고' }
+  };
+
   function renderList() {
-    var isB = state.tab === 'benefits';
-    var list = (isB ? benefits.filter(matchesBenefit).sort(compareBenefits)
-      : events.filter(matchesEvent).sort(compareEvents));
+    var view = TAB_VIEWS[state.tab];
+    var list = view.items();
     el.cards.textContent = '';
-    list.forEach(function (c) { el.cards.appendChild(isB ? benefitCard(c) : eventCard(c)); });
-    el['result-count'].textContent = list.length + (isB ? '개 항목' : '개 행사');
+    list.forEach(function (c) { el.cards.appendChild(view.render(c)); });
+    el['result-count'].textContent = list.length + view.unit;
     el.empty.hidden = list.length !== 0;
   }
 
   function update() {
     renderFilters();
+    renderNoticeMeta();
     renderList();
     writeQuery();
   }
@@ -470,9 +570,11 @@
     if (state.tab === 'benefits') {
       state.bSearch = state.bGrade = state.bType = state.bScope = state.bField = state.bOrg = '';
       state.bClosed = false;
-    } else {
+    } else if (state.tab === 'events') {
       state.eGrade = state.eField = '';
       state.eFree = state.ePast = false;
+    } else {
+      state.nSearch = state.nRegion = '';
     }
     update();
   }
@@ -490,7 +592,7 @@
 
   /* ---------- 데이터 읽기 ---------- */
 
-  function load(path, key, validate, enrich, target) {
+  function load(path, key, validate, enrich, target, onData) {
     return fetch(path, { cache: 'no-cache' })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -505,6 +607,7 @@
         }
         var items = Array.isArray(data && data[key]) ? data[key] : null;
         if (!items) throw new Error('최상위에 "' + key + '" 배열이 없습니다');
+        if (onData) onData(data);
 
         var today = todayKST();
         var seen = {};
@@ -539,6 +642,7 @@
     fillSelect(el['b-grade'], '전체 학년', GRADES);
     fillSelect(el['e-grade'], '전체 학년', GRADES);
 
+    el['n-search'].addEventListener('input', function () { state.nSearch = el['n-search'].value; renderList(); writeQuery(); });
     el['b-search'].addEventListener('input', function () { state.bSearch = el['b-search'].value; renderList(); writeQuery(); });
     [['b-grade', 'bGrade'], ['b-field', 'bField'], ['b-org', 'bOrg'], ['e-grade', 'eGrade']].forEach(function (p) {
       el[p[0]].addEventListener('change', function () { state[p[1]] = el[p[0]].value; update(); });
@@ -555,7 +659,8 @@
 
     Promise.all([
       load('data/benefits.json', 'benefits', validateBenefit, benefitStatus, benefits),
-      load('data/events.json', 'events', validateEvent, eventStatus, events)
+      load('data/events.json', 'events', validateEvent, eventStatus, events),
+      load('data/notices.json', 'notices', validateNotice, noticeStatus, notices, function (data) { noticeInfo = data; })
     ]).then(function () {
       fillSelect(el['b-field'], '전체 분야', uniqueSorted(benefits, 'field'));
       fillSelect(el['b-org'], '전체 기관', uniqueSorted(benefits, 'org'));

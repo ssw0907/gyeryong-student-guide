@@ -76,6 +76,18 @@
       </div>
     </section>
 
+    <section class="filters" aria-label="필터" id="filters-notices" hidden>
+      <div class="filter-row">
+        <label class="filter-label" for="n-search">검색</label>
+        <input type="search" id="n-search" placeholder="제목, 기관으로 찾기">
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-n-region">지역</span>
+        <div class="chips" role="group" aria-labelledby="lbl-n-region" id="n-region"></div>
+      </div>
+      <div class="notice-meta" id="n-meta"></div>
+    </section>
+
     <div class="result-bar">
       <p id="result-count" aria-live="polite"></p>
       <button type="button" class="link-btn" id="reset-btn">필터 초기화</button>
