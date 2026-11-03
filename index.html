@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>계룡 초·중학생 혜택·행사 안내</title>
+  <meta name="description" content="계룡시 초·중학생과 학부모를 위한 충남·계룡 혜택·프로그램·장학금과 대전 행사 안내">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>계룡 초·중학생 혜택·행사 안내</h1>
+      <p class="lead">아이가 받을 수 있는 혜택·프로그램·장학금과 가까운 대전 행사를 한곳에서 찾아보세요.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="tabs" role="group" aria-label="정보 종류" id="tabs"></div>
+
+    <p class="caution">정확한 내용은 반드시 운영·주최 기관에 확인하세요.</p>
+
+    <section class="filters" aria-label="필터" id="filters-benefits">
+      <div class="filter-row">
+        <label class="filter-label" for="b-search">검색</label>
+        <input type="search" id="b-search" placeholder="이름, 기관, 내용으로 찾기">
+      </div>
+      <div class="filter-row">
+        <label class="filter-label" for="b-grade">학년</label>
+        <select id="b-grade"></select>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-b-type">유형</span>
+        <div class="chips" role="group" aria-labelledby="lbl-b-type" id="b-type"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-b-scope">범위</span>
+        <div class="chips" role="group" aria-labelledby="lbl-b-scope" id="b-scope"></div>
+      </div>
+      <div class="filter-row">
+        <label class="filter-label" for="b-field">분야</label>
+        <select id="b-field"></select>
+      </div>
+      <div class="filter-row">
+        <label class="filter-label" for="b-org">기관</label>
+        <select id="b-org"></select>
+      </div>
+      <div class="filter-row">
+        <label class="toggle">
+          <input type="checkbox" id="b-closed">
+          <span>마감된 항목 보기</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="필터" id="filters-events" hidden>
+      <div class="filter-row">
+        <label class="filter-label" for="e-grade">학년</label>
+        <select id="e-grade"></select>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-e-field">분야</span>
+        <div class="chips" role="group" aria-labelledby="lbl-e-field" id="e-field"></div>
+      </div>
+      <div class="filter-row">
+        <label class="toggle">
+          <input type="checkbox" id="e-free">
+          <span>무료만 보기</span>
+        </label>
+      </div>
+      <div class="filter-row">
+        <label class="toggle">
+          <input type="checkbox" id="e-past">
+          <span>신청 마감·지난 행사 보기</span>
+        </label>
+      </div>
+    </section>
+
+    <div class="result-bar">
+      <p id="result-count" aria-live="polite"></p>
+      <button type="button" class="link-btn" id="reset-btn">필터 초기화</button>
+    </div>
+
+    <ul class="cards" id="cards"></ul>
+
+    <div class="empty" id="empty" hidden>
+      <p>조건에 맞는 항목이 없어요.</p>
+      <button type="button" class="btn" id="empty-reset-btn">필터 초기화</button>
+    </div>
+
+    <div class="notice" id="notice" role="alert" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>공식 누리집에서 확인한 내용을 정리했고, 확인하지 못한 값은 "확인 필요"로 적었습니다. 정확한 내용은 반드시 운영·주최 기관에 확인하세요.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
