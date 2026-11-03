@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03",
+  "updatedAt": "2026-11-04",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -33,17 +33,19 @@
       "key": "cnnse-40",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
-      "ok": true,
-      "read": 10,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7a4c04d04690>, "
     },
     {
       "key": "cnnse-199",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
-      "ok": true,
-      "read": 10,
-      "kept": 3
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7a4c04d05c50>, "
     },
     {
       "key": "icec",
@@ -84,8 +86,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7a4c0493fed0>, 'C"
     },
     {
       "key": "cnse-notice",
@@ -94,8 +95,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7a4c04949a50>, 'C"
     },
     {
       "key": "pass-activity",
