@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04",
+  "updatedAt": "2026-11-05",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -36,7 +36,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7a4c04d04690>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x73442fa94810>, "
     },
     {
       "key": "cnnse-199",
@@ -45,7 +45,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7a4c04d05c50>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x73442fa95c90>, "
     },
     {
       "key": "icec",
@@ -86,7 +86,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7a4c0493fed0>, 'C"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x73442f6bfbd0>, 'C"
     },
     {
       "key": "cnse-notice",
@@ -95,7 +95,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7a4c04949a50>, 'C"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x73442f6c9750>, 'C"
     },
     {
       "key": "pass-activity",
@@ -111,7 +111,7 @@
       "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038",
       "ok": true,
       "read": 10,
-      "kept": 0
+      "kept": 1
     },
     {
       "key": "science",
@@ -123,6 +123,15 @@
     }
   ],
   "notices": [
+    {
+      "id": "pass-counsel-0251232f9b40",
+      "title": "2026년 청소년전화1388 자원상담원(예비인력) 모집 안내",
+      "org": "충청남도청소년상담복지센터",
+      "region": "충남·계룡",
+      "date": "2026-11-04",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038&act=view&list_no=3680&tag=&nPage=1",
+      "firstSeen": "2026-11-05"
+    },
     {
       "id": "science-d0ab3c0c2fb7",
       "title": "2026 대한민국 월드리그 조류」 탐조 교육·체험 교실 안내",
