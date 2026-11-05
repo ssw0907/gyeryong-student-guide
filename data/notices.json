@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05",
+  "updatedAt": "2026-11-06",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -8,8 +8,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "HTTPError: 503 Server Error: Service Temporarily Unavailable for url: https://gyeryong.go.kr/robots.txt"
     },
     {
       "key": "gyeryong-gosi",
@@ -18,8 +17,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "HTTPError: 503 Server Error: Service Temporarily Unavailable for url: https://gyeryong.go.kr/robots.txt"
     },
     {
       "key": "gryouth-star",
@@ -36,7 +34,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x73442fa94810>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7d74547b2cd0>, "
     },
     {
       "key": "cnnse-199",
@@ -45,7 +43,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x73442fa95c90>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7d74547b1990>, "
     },
     {
       "key": "icec",
@@ -61,7 +59,7 @@
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121",
       "ok": true,
       "read": 26,
-      "kept": 7
+      "kept": 6
     },
     {
       "key": "cle",
@@ -86,7 +84,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x73442f6bfbd0>, 'C"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7d74543af810>, 'C"
     },
     {
       "key": "cnse-notice",
@@ -95,14 +93,14 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x73442f6c9750>, 'C"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7d74543bd350>, 'C"
     },
     {
       "key": "pass-activity",
       "org": "충청남도청소년활동진흥센터",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
       "ok": true,
-      "read": 13,
+      "read": 14,
       "kept": 3
     },
     {
@@ -472,15 +470,6 @@
       "region": "충남·계룡",
       "date": "2026-06-04",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=683461",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "chsl-151f6e887acd",
-      "title": "2026 학생연주단 국외예술체험 안내 가정통신문",
-      "org": "충청남도교육청학생교육문화원",
-      "region": "충남·계룡",
-      "date": "2026-05-09",
-      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=665240",
       "firstSeen": "2026-11-03"
     }
   ]
