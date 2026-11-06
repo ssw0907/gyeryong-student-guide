@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06",
+  "updatedAt": "2026-11-07",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -33,17 +33,19 @@
       "key": "cnnse-40",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
-      "ok": true,
-      "read": 10,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7b5226896c90>, "
     },
     {
       "key": "cnnse-199",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
-      "ok": true,
-      "read": 10,
-      "kept": 2
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7b5226603710>, "
     },
     {
       "key": "icec",
@@ -84,8 +86,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7b5226228310>, 'C"
     },
     {
       "key": "cnse-notice",
@@ -94,15 +95,14 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7b5226229e50>, 'C"
     },
     {
       "key": "pass-activity",
       "org": "충청남도청소년활동진흥센터",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
       "ok": true,
-      "read": 15,
+      "read": 14,
       "kept": 2
     },
     {
@@ -123,6 +123,16 @@
     }
   ],
   "notices": [
+    {
+      "id": "pass-activity-ca5bb94b7742",
+      "title": "2026년 충청남도 청소년활동 정책 성과공유회 참가자 모집 안내",
+      "org": "충청남도청소년활동진흥센터",
+      "region": "충남·계룡",
+      "date": "2026-11-06",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3688&nPage=1",
+      "firstSeen": "2026-11-07",
+      "grades": []
+    },
     {
       "id": "pass-activity-2584c8cc8f0c",
       "title": "[안내] 청소년 성장지원 마이데이터 서비스 가입 이벤트 안내",
