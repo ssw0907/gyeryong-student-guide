@@ -8,7 +8,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "HTTPError: 503 Server Error: Service Temporarily Unavailable for url: https://gyeryong.go.kr/robots.txt"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "gyeryong-gosi",
@@ -17,7 +18,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "HTTPError: 503 Server Error: Service Temporarily Unavailable for url: https://gyeryong.go.kr/robots.txt"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "gryouth-star",
@@ -31,19 +33,17 @@
       "key": "cnnse-40",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7d74547b2cd0>, "
+      "ok": true,
+      "read": 10,
+      "kept": 0
     },
     {
       "key": "cnnse-199",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7d74547b1990>, "
+      "ok": true,
+      "read": 10,
+      "kept": 2
     },
     {
       "key": "icec",
@@ -51,7 +51,7 @@
       "url": "http://icec.cne.go.kr/home/board/brdList.do?menu_cd=000041",
       "ok": true,
       "read": 10,
-      "kept": 5
+      "kept": 3
     },
     {
       "key": "chsl",
@@ -59,7 +59,7 @@
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121",
       "ok": true,
       "read": 26,
-      "kept": 6
+      "kept": 5
     },
     {
       "key": "cle",
@@ -67,7 +67,7 @@
       "url": "http://cle.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003",
       "ok": true,
       "read": 16,
-      "kept": 5
+      "kept": 3
     },
     {
       "key": "cnbl",
@@ -84,7 +84,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7d74543af810>, 'C"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "cnse-notice",
@@ -93,15 +94,16 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7d74543bd350>, 'C"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "pass-activity",
       "org": "충청남도청소년활동진흥센터",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
       "ok": true,
-      "read": 14,
-      "kept": 3
+      "read": 15,
+      "kept": 2
     },
     {
       "key": "pass-counsel",
@@ -109,7 +111,7 @@
       "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038",
       "ok": true,
       "read": 10,
-      "kept": 1
+      "kept": 0
     },
     {
       "key": "science",
@@ -122,13 +124,14 @@
   ],
   "notices": [
     {
-      "id": "pass-counsel-0251232f9b40",
-      "title": "2026년 청소년전화1388 자원상담원(예비인력) 모집 안내",
-      "org": "충청남도청소년상담복지센터",
+      "id": "pass-activity-2584c8cc8f0c",
+      "title": "[안내] 청소년 성장지원 마이데이터 서비스 가입 이벤트 안내",
+      "org": "충청남도청소년활동진흥센터",
       "region": "충남·계룡",
-      "date": "2026-11-04",
-      "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038&act=view&list_no=3680&tag=&nPage=1",
-      "firstSeen": "2026-11-05"
+      "date": "2026-11-06",
+      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3684&tag=&nPage=1",
+      "firstSeen": "2026-11-06",
+      "grades": []
     },
     {
       "id": "science-d0ab3c0c2fb7",
@@ -137,7 +140,18 @@
       "region": "대전",
       "date": "",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=50299",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
+    },
+    {
+      "id": "gryouth-star-f52200607c10",
+      "title": "청소년 벼룩시장 '별의별장터'",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "date": "2026-11-01",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-06",
+      "grades": []
     },
     {
       "id": "gryouth-star-476f63133778",
@@ -146,7 +160,8 @@
       "region": "충남·계룡",
       "date": "2026-11-01",
       "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "icec-740e5f83ce1d",
@@ -155,7 +170,8 @@
       "region": "충남·계룡",
       "date": "2026-10-31",
       "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=742",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "gryouth-star-bf2bf7187255",
@@ -164,7 +180,8 @@
       "region": "충남·계룡",
       "date": "2026-10-29",
       "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-8594e428242e",
@@ -173,7 +190,8 @@
       "region": "대전",
       "date": "2026-10-24",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49261",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cnbl-0c311712d9af",
@@ -182,7 +200,8 @@
       "region": "충남·계룡",
       "date": "2026-10-23",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=771589",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cnbl-d22f52d8c0ea",
@@ -191,16 +210,8 @@
       "region": "충남·계룡",
       "date": "2026-10-22",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=771511",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "icec-f658b27cb3cc",
-      "title": "[충청남도교육청진로융합교육원, 「2026 아산권역 보호자 진로진학 공부방」운영]",
-      "org": "충청남도교육청진로융합교육원",
-      "region": "충남·계룡",
-      "date": "2026-10-21",
-      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=736",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "icec-a4325d7ab8fe",
@@ -209,7 +220,8 @@
       "region": "충남·계룡",
       "date": "2026-10-20",
       "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=734",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "icec-7fc9c4a14a68",
@@ -218,7 +230,10 @@
       "region": "충남·계룡",
       "date": "2026-10-20",
       "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=733",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": [
+        "중3"
+      ]
     },
     {
       "id": "science-fa94290b9c40",
@@ -227,16 +242,8 @@
       "region": "대전",
       "date": "2026-10-14",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49246",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "icec-981d8ae15d4d",
-      "title": "[충청남도교육청진로융합교육원, 「학교생활기록부 기반 면접 준비」 프로그램 자체 개발·보급]",
-      "org": "충청남도교육청진로융합교육원",
-      "region": "충남·계룡",
-      "date": "2026-10-12",
-      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=731",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cnnse-199-93275fb2954d",
@@ -245,7 +252,12 @@
       "region": "충남·계룡",
       "date": "2026-10-08",
       "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283197",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": [
+        "중1",
+        "중2",
+        "중3"
+      ]
     },
     {
       "id": "cnnse-199-3be49c896050",
@@ -254,7 +266,12 @@
       "region": "충남·계룡",
       "date": "2026-10-08",
       "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283196",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": [
+        "중1",
+        "중2",
+        "중3"
+      ]
     },
     {
       "id": "cle-3cccd3b537b2",
@@ -263,7 +280,8 @@
       "region": "충남·계룡",
       "date": "2026-10-08",
       "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=760534",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "chsl-9bf0ce7bba29",
@@ -272,25 +290,8 @@
       "region": "충남·계룡",
       "date": "2026-10-07",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=760399",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "pass-activity-259fd3c37c16",
-      "title": "[안내] 2026년 청소년 디지털 시민성 함양 활동 프로그램 우수사례 공모전 안내",
-      "org": "충청남도청소년활동진흥센터",
-      "region": "충남·계룡",
-      "date": "2026-10-06",
-      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3631&tag=&nPage=1",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "pass-activity-1e980ff93b67",
-      "title": "[안내] 2026년 청소년 핵심역량 기반 우수 PBL 모델 공모전 안내",
-      "org": "충청남도청소년활동진흥센터",
-      "region": "충남·계룡",
-      "date": "2026-10-06",
-      "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3632&tag=&nPage=1",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cnnse-199-0a51fc7fcb03",
@@ -299,7 +300,8 @@
       "region": "충남·계룡",
       "date": "2026-10-02",
       "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283109",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cle-7e7f4292d28b",
@@ -308,7 +310,8 @@
       "region": "충남·계룡",
       "date": "2026-10-02",
       "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=754424",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "gryouth-star-9e732d3f9c64",
@@ -317,7 +320,8 @@
       "region": "충남·계룡",
       "date": "2026-10-01",
       "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "gryouth-star-8a8e2f6818b3",
@@ -326,7 +330,8 @@
       "region": "충남·계룡",
       "date": "2026-09-30",
       "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cnbl-a7399e5f1756",
@@ -335,16 +340,8 @@
       "region": "충남·계룡",
       "date": "2026-09-28",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=753584",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "cle-8a12a99bba13",
-      "title": "2026년 평생학습축제 학습자 발표회 공연 신청 및 전시 작품 제출 안내",
-      "org": "충청남도교육청평생교육원",
-      "region": "충남·계룡",
-      "date": "2026-09-22",
-      "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=753015",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "pass-activity-4062cff510d7",
@@ -353,7 +350,8 @@
       "region": "충남·계룡",
       "date": "2026-09-21",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3610&tag=&nPage=1",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "cnbl-a06b6c770e72",
@@ -362,7 +360,8 @@
       "region": "충남·계룡",
       "date": "2026-09-21",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=752807",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-b7f5292ad15a",
@@ -371,7 +370,8 @@
       "region": "대전",
       "date": "2026-09-09",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49213",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "chsl-d91c4721b345",
@@ -380,7 +380,8 @@
       "region": "충남·계룡",
       "date": "2026-09-03",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=740028",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "chsl-49d26027c8b7",
@@ -389,7 +390,8 @@
       "region": "충남·계룡",
       "date": "2026-08-21",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=736364",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-0b3946bfb576",
@@ -398,7 +400,8 @@
       "region": "대전",
       "date": "2026-08-12",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49164",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-54d6861990fc",
@@ -407,7 +410,8 @@
       "region": "대전",
       "date": "2026-07-28",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49106",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-48d6e0944fe5",
@@ -416,7 +420,8 @@
       "region": "대전",
       "date": "2026-07-28",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49116",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-6979dd015c84",
@@ -425,7 +430,8 @@
       "region": "대전",
       "date": "2026-07-18",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49126",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-f2b54728797c",
@@ -434,16 +440,8 @@
       "region": "대전",
       "date": "2026-07-11",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49080",
-      "firstSeen": "2026-11-03"
-    },
-    {
-      "id": "chsl-b308bea71531",
-      "title": "2026 학생연주단 여름방학 집중 수업 가정통신문",
-      "org": "충청남도교육청학생교육문화원",
-      "region": "충남·계룡",
-      "date": "2026-06-27",
-      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=699066",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-7fa148788efd",
@@ -452,7 +450,8 @@
       "region": "대전",
       "date": "2026-06-20",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49091",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "science-9605d9e47155",
@@ -461,7 +460,8 @@
       "region": "대전",
       "date": "2026-06-10",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=49075",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     },
     {
       "id": "chsl-de9b6f19d694",
@@ -470,7 +470,8 @@
       "region": "충남·계룡",
       "date": "2026-06-04",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=683461",
-      "firstSeen": "2026-11-03"
+      "firstSeen": "2026-11-03",
+      "grades": []
     }
   ]
 }

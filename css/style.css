@@ -283,6 +283,7 @@ select, input[type="search"] {
 .tag.warn { background: var(--warn-soft); color: var(--warn); border-color: transparent; font-weight: 600; }
 .tag.alert { background: var(--urgent-soft); color: var(--urgent); border-color: transparent; font-weight: 700; }
 .tag.free { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.tag.auto { border-style: dashed; }
 
 .info { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; font-size: 0.95rem; }
 .info dt { color: var(--muted); white-space: nowrap; }
@@ -300,7 +301,7 @@ select, input[type="search"] {
 
 .card-detail[hidden] { display: none; }
 
-.notice-meta { font-size: 0.88rem; color: var(--muted); }
+.notice-meta { font-size: 0.88rem; color: var(--muted); margin-top: 16px; }
 .notice-meta p { margin: 0 0 6px; }
 .notice-meta p:last-child { margin-bottom: 0; }
 .notice-meta a { color: var(--accent); }

@@ -32,7 +32,12 @@ INCLUDE = ['초등', '중학', '중등', '초·중', '초중', '학생', '청소
 EXCLUDE = ['채용', '합격', '임기제', '공무원', '기간제', '입찰', '심의', '심사 결과', '선정결과', '선정 결과', '결과 안내',
            '결과 발표', '결과 공고', '민간위탁', '교직원', '교원', '교사', '지도사', '직무연수', '성인', '어르신', '노인',
            '시니어', '청년', '고등학생', '고등학교', '고교', '고입', '대입', '휴원', '휴관', '수요조사', '만족도', '성료',
-           '을지연습', '포상', '유공', '담당자', '연수', '심포지엄', '학술대회', '전문지원기관', '결과', '산업안전', '운영터전']
+           '을지연습', '포상', '유공', '담당자', '연수', '심포지엄', '학술대회', '전문지원기관', '결과', '산업안전', '운영터전',
+           # 어른·기관 대상이거나 이미 뽑힌 사람에게만 해당하는 공고
+           '상담원', '봉사자', '토론회', '간담회', '개발·보급', '우수사례', 'PBL', '학습자', '가정통신문', '강사']
+# 계룡이 아닌 충남 시·군 이름 (다른 시·군만의 사업은 수록 범위 밖)
+OTHER_CITIES = ['천안', '공주', '보령', '아산', '서산', '논산', '당진', '금산', '부여', '서천', '청양', '홍성', '예산', '태안']
+EXCLUDE += [c + s for c in OTHER_CITIES for s in ('권역', '시 ', '군 ', '시민', '군민')]
 
 DATE_RE = re.compile(r'(20\d{2})\s*[-./]\s*(\d{1,2})\s*[-./]\s*(\d{1,2})')
 
@@ -266,7 +271,14 @@ def main():
     def sort_key(n):
         return n['date'] or n['firstSeen']
 
-    notices = [n for n in merged.values() if sort_key(n) >= cutoff]
+    # 제외 단어를 바꾸면 이미 저장된 공고에도 바로 적용되도록 다시 거름
+    filtered_keys = [s['key'] + '-' for s in SOURCES if s['filter']]
+    notices = [n for n in merged.values() if sort_key(n) >= cutoff
+               and not (n['id'].startswith(tuple(filtered_keys)) and not wanted(n['title']))]
+    # 제목에 학년이 보이면 적어 둠 (사이트 학년 필터용). 못 읽으면 [] → "학년 확인 필요"
+    from collect_programs import parse_grades  # 서로 불러오는 순서 문제를 피하려고 여기서 불러옴
+    for n in notices:
+        n['grades'] = parse_grades(n['title']) or []
     # 같은 기관의 여러 게시판에 올라온 같은 제목은 하나만 남김
     seen = set()
     unique = []

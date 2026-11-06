@@ -1,0 +1,108 @@
+{
+  "updatedAt": "2026-11-06",
+  "sources": [
+    {
+      "key": "gryouth",
+      "org": "계룡시청소년별마루센터",
+      "ok": true,
+      "kept": 1,
+      "read": 2
+    },
+    {
+      "key": "cnall",
+      "org": "충남평생교육 강좌 신청",
+      "ok": true,
+      "kept": 2,
+      "read": 3
+    }
+  ],
+  "benefits": [
+    {
+      "id": "auto-gryouth-4dd40b8d86",
+      "name": "청소년 벼룩시장 '별의별장터'",
+      "type": "프로그램",
+      "field": "청소년 활동",
+      "target": "계룡시 거주 및 재학 청소년 및 가족",
+      "grades": [],
+      "content": "자동 수집한 항목입니다. 자세한 조건은 공식 링크에서 확인하세요. 모집 인원 0/30명.",
+      "schedule": "2026.11.14",
+      "place": "계룡시청소년별마루센터 실외",
+      "applyMethod": "별마루센터 누리집 신청 (선착순)",
+      "applyStart": "2026-11-01",
+      "applyEnd": "2026-11-13",
+      "applyNote": "",
+      "cost": "무료",
+      "org": "계룡시청",
+      "scope": "계룡시",
+      "applyUnit": "개인",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "source": "계룡시청소년별마루센터",
+      "checkedAt": "2026-11-06",
+      "dataYear": "2026",
+      "stale": false,
+      "auto": true
+    },
+    {
+      "id": "auto-cnall-38764",
+      "name": "<2026 평생학습주간>초등3~6학년:단어로 꾸미는 인성 다이어리",
+      "type": "프로그램",
+      "field": "평생교육",
+      "target": "초등학생",
+      "grades": [
+        "초3",
+        "초4",
+        "초5",
+        "초6"
+      ],
+      "content": "자동 수집한 항목입니다. 자세한 조건은 공식 링크에서 확인하세요. 수강 지역 조건 확인 필요.",
+      "schedule": "2026.11.07 토 10:00 ~ 11:50",
+      "place": "확인 필요",
+      "applyMethod": "cnall.or.kr 강좌 신청",
+      "applyStart": "2026-10-21",
+      "applyEnd": "2026-11-06",
+      "applyNote": "",
+      "cost": "무료",
+      "org": "충청남도교육청학생교육문화원",
+      "scope": "충남 전체",
+      "applyUnit": "개인",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38764",
+      "source": "충청남도교육청학생교육문화원 (충남평생교육 강좌 신청)",
+      "checkedAt": "2026-11-06",
+      "dataYear": "2026",
+      "stale": false,
+      "auto": true
+    },
+    {
+      "id": "auto-cnall-38683",
+      "name": "[평생학습주간 체험] 함께라서 더 특별한 케이크 -초코케이크 만들기-",
+      "type": "프로그램",
+      "field": "문화·예술",
+      "target": "성인, 유아, 초등학생",
+      "grades": [
+        "초1",
+        "초2",
+        "초3",
+        "초4",
+        "초5",
+        "초6"
+      ],
+      "content": "자동 수집한 항목입니다. 자세한 조건은 공식 링크에서 확인하세요. 수강 지역 조건 확인 필요.",
+      "schedule": "2026.11.03 화 16:00 ~ 17:50",
+      "place": "확인 필요",
+      "applyMethod": "cnall.or.kr 강좌 신청",
+      "applyStart": "2026-10-22",
+      "applyEnd": "2026-11-07",
+      "applyNote": "",
+      "cost": "무료",
+      "org": "충청남도교육청남부평생교육원",
+      "scope": "충남 전체",
+      "applyUnit": "개인",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38683",
+      "source": "충청남도교육청남부평생교육원 (충남평생교육 강좌 신청)",
+      "checkedAt": "2026-11-06",
+      "dataYear": "2026",
+      "stale": false,
+      "auto": true
+    }
+  ]
+}

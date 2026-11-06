@@ -48,7 +48,7 @@
       <div class="filter-row">
         <label class="toggle">
           <input type="checkbox" id="b-closed">
-          <span>마감된 항목 보기</span>
+          <span>마감된 항목·지난 공고 보기</span>
         </label>
       </div>
     </section>
@@ -71,21 +71,9 @@
       <div class="filter-row">
         <label class="toggle">
           <input type="checkbox" id="e-past">
-          <span>신청 마감·지난 행사 보기</span>
+          <span>신청 마감·지난 행사·공고 보기</span>
         </label>
       </div>
-    </section>
-
-    <section class="filters" aria-label="필터" id="filters-notices" hidden>
-      <div class="filter-row">
-        <label class="filter-label" for="n-search">검색</label>
-        <input type="search" id="n-search" placeholder="제목, 기관으로 찾기">
-      </div>
-      <div class="filter-row">
-        <span class="filter-label" id="lbl-n-region">지역</span>
-        <div class="chips" role="group" aria-labelledby="lbl-n-region" id="n-region"></div>
-      </div>
-      <div class="notice-meta" id="n-meta"></div>
     </section>
 
     <div class="result-bar">
@@ -99,6 +87,8 @@
       <p>조건에 맞는 항목이 없어요.</p>
       <button type="button" class="btn" id="empty-reset-btn">필터 초기화</button>
     </div>
+
+    <div class="notice-meta" id="n-meta" hidden></div>
 
     <div class="notice" id="notice" role="alert" hidden></div>
   </main>

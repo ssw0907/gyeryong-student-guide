@@ -1,0 +1,48 @@
+{
+  "updatedAt": "2026-11-06",
+  "sources": [
+    {
+      "key": "science",
+      "org": "국립중앙과학관",
+      "ok": true,
+      "kept": 1,
+      "read": 3
+    }
+  ],
+  "events": [
+    {
+      "id": "auto-science-50310",
+      "name": "<자연 예술 아카데미> 작은 자연, 테라리움",
+      "field": "과학",
+      "target": "6세 이상~성인",
+      "grades": [
+        "초1",
+        "초2",
+        "초3",
+        "초4",
+        "초5",
+        "초6",
+        "중1",
+        "중2",
+        "중3"
+      ],
+      "targetUnconfirmed": false,
+      "eventStart": "2026-11-21",
+      "eventEnd": "2026-11-21",
+      "schedule": "14:00 – 16:00",
+      "place": "국립중앙과학관",
+      "applyMethod": "국립중앙과학관 누리집 예약 (로그인 필요)",
+      "applyStart": "2026-11-06",
+      "applyEnd": "2026-11-20",
+      "applyNote": "",
+      "cost": "확인 필요",
+      "capacity": "확인 필요",
+      "org": "국립중앙과학관",
+      "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=50310",
+      "source": "국립중앙과학관 (자동 수집)",
+      "checkedAt": "2026-11-06",
+      "residency": "제한 문구 없음(목록 기준, 신청 전 확인)",
+      "auto": true
+    }
+  ]
+}

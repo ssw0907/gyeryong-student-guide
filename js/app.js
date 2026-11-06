@@ -10,7 +10,8 @@
   var TYPES = ['혜택', '프로그램', '장학금'];
   var SCOPES = ['충남 전체', '계룡시'];
   var EVENT_FIELDS = ['과학', '문학', '기타'];
-  var REGIONS = ['충남·계룡', '대전'];
+  var NOTICE_TYPE = '공고';          // 자동 수집 공고를 혜택 탭 '유형'에서 고를 때 쓰는 이름
+  var RECENT_NOTICE_DAYS = 30;       // 이보다 오래된 공고는 '지난 항목 보기'를 켜야 보임
   var BENEFIT_REQUIRED = ['id', 'name', 'type', 'field', 'target', 'content', 'org', 'scope', 'url', 'source', 'checkedAt'];
   var EVENT_REQUIRED = ['id', 'name', 'field', 'target', 'org', 'url', 'source', 'checkedAt', 'residency'];
   var URGENT_DAYS = 7;
@@ -20,8 +21,7 @@
   var state = {
     tab: 'benefits',
     bSearch: '', bGrade: '', bType: '', bScope: '', bField: '', bOrg: '', bClosed: false,
-    eGrade: '', eField: '', eFree: false, ePast: false,
-    nSearch: '', nRegion: ''
+    eGrade: '', eField: '', eFree: false, ePast: false
   };
   var benefits = [];
   var events = [];
@@ -30,7 +30,7 @@
 
   var el = {};
   ['tabs', 'filters-benefits', 'filters-events', 'b-search', 'b-grade', 'b-type', 'b-scope', 'b-field', 'b-org', 'b-closed',
-    'e-grade', 'e-field', 'e-free', 'e-past', 'filters-notices', 'n-search', 'n-region', 'n-meta', 'cards', 'result-count', 'empty', 'notice', 'reset-btn', 'empty-reset-btn'
+    'e-grade', 'e-field', 'e-free', 'e-past', 'n-meta', 'cards', 'result-count', 'empty', 'notice', 'reset-btn', 'empty-reset-btn'
   ].forEach(function (id) { el[id] = document.getElementById(id); });
 
   /* ---------- 날짜 (한국 시간 기준) ---------- */
@@ -217,30 +217,38 @@
     return c;
   }
 
+  // 자동 수집 공고를 혜택·행사 탭에 섞어 보여 주기 위한 카드 정보.
+  // 최근 공고는 모집 중·예정 항목 다음에, 오래된 공고는 '지난 항목 보기'를 켤 때만 보임
   function noticeStatus(item, today) {
     var c = Object.assign({}, item);
+    c.kind = 'notice';
+    c.name = item.title;
+    c.type = NOTICE_TYPE;
+    c.grades = Array.isArray(item.grades) ? item.grades.filter(function (g) { return GRADES.indexOf(g) !== -1; }) : [];
     c.sortDate = item.date || item.firstSeen;
-    var isNew = toDayNumber(today) - toDayNumber(c.sortDate) <= NEW_NOTICE_DAYS;
+    var age = toDayNumber(today) - toDayNumber(c.sortDate);
+    var isNew = age <= NEW_NOTICE_DAYS;
+    c.oldNotice = age > RECENT_NOTICE_DAYS;
     c.badge = isNew ? 'open' : 'neutral';
     c.badgeText = isNew ? '새 공고' : '공고';
+    c.status = c.oldNotice ? '지난 공고' : '공고';
+    c.order = c.oldNotice ? 5 : 1.5;              // 혜택 탭: 모집 중 0, 예정 1, 공고 1.5, 혜택 2 …
+    c.sortKey = -toDayNumber(c.sortDate);         // 최신 공고가 위로
     return c;
-  }
-
-  function compareNotices(a, b) {
-    return b.sortDate.localeCompare(a.sortDate) || a.title.localeCompare(b.title, 'ko');
   }
 
   function compareBenefits(a, b) {
     if (a.order !== b.order) return a.order - b.order;
-    if (a.order < 2) return a.sortKey - b.sortKey;
+    if (a.order < 2 || a.kind === 'notice') return a.sortKey - b.sortKey;
     return a.name.localeCompare(b.name, 'ko');
   }
 
-  var EVENT_ORDER = { '신청 중': 0, '예정': 0, '상시': 1, '지난 행사': 2 };
+  var EVENT_ORDER = { '신청 중': 0, '예정': 0, '공고': 0.5, '상시': 1, '지난 행사': 2, '지난 공고': 3 };
 
   function compareEvents(a, b) {
     var o = EVENT_ORDER[a.status] - EVENT_ORDER[b.status];
     if (o !== 0) return o;
+    if (a.kind === 'notice') return a.sortKey - b.sortKey;                                  // 최신 공고 먼저
     if (a.status === '지난 행사') return (b.eventEnd || '').localeCompare(a.eventEnd || ''); // 최근 순
     if (a.sortDay !== b.sortDay) return a.sortDay < b.sortDay ? -1 : 1;                      // 날짜순
     return a.name.localeCompare(b.name, 'ko');
@@ -254,7 +262,7 @@
   }
 
   function matchesBenefit(c) {
-    if (c.status === '마감' && !state.bClosed) return false;
+    if ((c.status === '마감' || c.oldNotice) && !state.bClosed) return false;
     if (!matchesGrade(c, state.bGrade)) return false;
     if (state.bType && c.type !== state.bType) return false;
     if (state.bScope && c.scope !== state.bScope) return false;
@@ -269,20 +277,10 @@
   }
 
   function matchesEvent(c) {
-    if ((c.status === '지난 행사' || c.applyEnded) && !state.ePast) return false;
+    if ((c.status === '지난 행사' || c.applyEnded || c.oldNotice) && !state.ePast) return false;
     if (!matchesGrade(c, state.eGrade)) return false;
     if (state.eField && c.field !== state.eField) return false;
     if (state.eFree && String(c.cost).indexOf('무료') === -1) return false;
-    return true;
-  }
-
-  function matchesNotice(c) {
-    if (state.nRegion && c.region !== state.nRegion) return false;
-    if (state.nSearch) {
-      var hay = (c.title + ' ' + c.org).toLowerCase();
-      var words = state.nSearch.toLowerCase().split(/\s+/).filter(Boolean);
-      if (!words.every(function (w) { return hay.indexOf(w) !== -1; })) return false;
-    }
     return true;
   }
 
@@ -290,13 +288,12 @@
 
   var QUERY_KEYS = {
     q: 'bSearch', grade: 'bGrade', type: 'bType', scope: 'bScope', field: 'bField', org: 'bOrg',
-    egrade: 'eGrade', efield: 'eField',
-    nq: 'nSearch', nregion: 'nRegion'
+    egrade: 'eGrade', efield: 'eField'
   };
 
   function readQuery() {
     var q = new URLSearchParams(location.search);
-    if (q.get('tab') === 'events' || q.get('tab') === 'notices') state.tab = q.get('tab');
+    if (q.get('tab') === 'events') state.tab = 'events';
     Object.keys(QUERY_KEYS).forEach(function (k) {
       if (q.get(k)) state[QUERY_KEYS[k]] = q.get(k);
     });
@@ -357,13 +354,13 @@
 
   function uniqueSorted(list, key) {
     var seen = {};
-    list.forEach(function (c) { seen[c[key]] = true; });
+    list.forEach(function (c) { if (c[key]) seen[c[key]] = true; });
     return Object.keys(seen).sort(function (a, b) { return a.localeCompare(b, 'ko'); });
   }
 
   function renderTabs() {
     el.tabs.textContent = '';
-    [['benefits', '충남·계룡 혜택/프로그램/장학금'], ['events', '대전 행사'], ['notices', '최신 공고']].forEach(function (t) {
+    [['benefits', '충남·계룡 혜택/프로그램/장학금'], ['events', '대전 행사']].forEach(function (t) {
       var tab = make('button', 'tab', t[1]);
       tab.type = 'button';
       tab.setAttribute('aria-pressed', String(state.tab === t[0]));
@@ -376,12 +373,10 @@
     renderTabs();
     el['filters-benefits'].hidden = state.tab !== 'benefits';
     el['filters-events'].hidden = state.tab !== 'events';
-    el['filters-notices'].hidden = state.tab !== 'notices';
 
-    renderChips(el['b-type'], TYPES, state.bType, function (v) { state.bType = v; update(); });
+    renderChips(el['b-type'], TYPES.concat([NOTICE_TYPE]), state.bType, function (v) { state.bType = v; update(); });
     renderChips(el['b-scope'], SCOPES, state.bScope, function (v) { state.bScope = v; update(); });
     renderChips(el['e-field'], EVENT_FIELDS, state.eField, function (v) { state.eField = v; update(); });
-    renderChips(el['n-region'], REGIONS, state.nRegion, function (v) { state.nRegion = v; update(); });
 
     if (el['b-search'].value !== state.bSearch) el['b-search'].value = state.bSearch;
     el['b-grade'].value = state.bGrade;
@@ -391,14 +386,15 @@
     el['e-grade'].value = state.eGrade;
     el['e-free'].checked = state.eFree;
     el['e-past'].checked = state.ePast;
-    if (el['n-search'].value !== state.nSearch) el['n-search'].value = state.nSearch;
   }
 
-  // 마지막 수집일과, 자동으로 읽지 못해 직접 확인해야 하는 기관 안내
+  // 공고 카드 설명과, 자동으로 읽지 못해 직접 확인해야 하는 기관 안내 (목록 아래)
   function renderNoticeMeta() {
     el['n-meta'].textContent = '';
+    el['n-meta'].hidden = !noticeInfo;
     if (!noticeInfo) return;
-    el['n-meta'].appendChild(make('p', '', '기관 게시판에서 매일 자동으로 모은 목록입니다. 제목으로만 고르므로 관련 없는 공고가 섞이거나 빠질 수 있으니, 자세한 내용은 공식 링크에서 확인하세요. 마지막 수집 ' + formatDate(noticeInfo.updatedAt)));
+    el['n-meta'].appendChild(make('p', '', '"공고" 카드는 기관 게시판에서 매일 자동으로 모은 것입니다. 제목만 보고 고르므로 관련 없는 공고가 섞이거나 빠질 수 있으니, 자세한 내용은 공식 링크에서 확인하세요. 마지막 수집 ' + formatDate(noticeInfo.updatedAt)));
+    if (state.tab !== 'benefits') return; // 읽지 못한 기관은 모두 충남·계룡 기관
     var seen = {};
     var missed = (noticeInfo.sources || []).filter(function (s) {
       if (s.ok || seen[s.org]) return false;
@@ -486,7 +482,7 @@
     li.appendChild(actions);
     li.appendChild(body);
 
-    li.appendChild(make('p', 'updated', '출처 ' + c.source + ' · 최종 확인 ' + formatDate(c.checkedAt)));
+    li.appendChild(make('p', 'updated', '출처 ' + c.source + (c.auto ? ' · 자동 수집 ' : ' · 최종 확인 ') + formatDate(c.checkedAt)));
     return li;
   }
 
@@ -494,6 +490,7 @@
     var flags = [];
     if (c.applyUnit && c.applyUnit !== '개인' && c.applyUnit !== UNKNOWN) flags.push([c.applyUnit + ' 신청', 'warn']);
     if (c.stale) flags.push(['오래된 자료 (' + c.dataYear + ')', 'warn']);
+    if (c.auto) flags.push(['자동 수집', 'auto']);
     var period = formatRange(c.applyStart, c.applyEnd);
     var apply = c.applyNote && period ? period + ' (' + c.applyNote + ')' : (period || c.applyNote || UNKNOWN);
     return card(c, c.type + ' · ' + c.field + ' · ' + c.scope, flags,
@@ -511,6 +508,7 @@
     if (c.residency.indexOf('한정') !== -1) flags.push([c.residency, 'warn']);
     if (c.urgent) flags.push(['신청 마감 임박', 'alert']);
     if (String(c.cost).indexOf('무료') === 0) flags.push(['무료', 'free']);
+    if (c.auto) flags.push(['자동 수집', 'auto']);
     var period = formatRange(c.applyStart, c.applyEnd);
     var apply = c.applyNote && period ? period + ' (' + c.applyNote + ')' : (period || c.applyNote || UNKNOWN);
     return card(c, c.field, flags,
@@ -520,35 +518,63 @@
       '공식 링크');
   }
 
+  // 게시판에서 제목·날짜·링크만 모은 공고 카드
   function noticeCard(c) {
-    var li = make('li', 'card');
+    var li = make('li', 'card' + (c.oldNotice ? ' is-closed' : ''));
     var head = make('div', 'card-head');
     var top = make('div', 'card-top');
     top.appendChild(make('span', 'badge ' + c.badge, c.badgeText));
-    top.appendChild(make('span', 'region', c.region));
+    top.appendChild(make('span', 'region', NOTICE_TYPE + ' · ' + c.region));
     head.appendChild(top);
-    head.appendChild(make('h2', '', c.title));
+    head.appendChild(make('h2', '', c.name));
     head.appendChild(make('p', 'organizer', c.org));
+
+    var tags = make('ul', 'tags');
+    tags.setAttribute('aria-label', '구분');
+    tags.appendChild(make('li', 'tag', gradeLabel(c.grades)));
+    tags.appendChild(make('li', 'tag auto', '제목만 자동 수집'));
+    head.appendChild(tags);
     li.appendChild(head);
 
     var actions = make('div', 'card-actions single');
-    var a = make('a', 'btn', '공식 링크');
+    var a = make('a', 'btn', '공식 링크에서 내용 보기');
     a.href = c.url;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
-    a.setAttribute('aria-label', c.title + ' 공식 링크 (새 창)');
+    a.setAttribute('aria-label', c.name + ' 공식 링크 (새 창)');
     actions.appendChild(a);
     li.appendChild(actions);
 
-    li.appendChild(make('p', 'updated', '자동 수집 · ' + (c.date ? '날짜 ' + formatDate(c.date) : '수집일 ' + formatDate(c.firstSeen))));
+    li.appendChild(make('p', 'updated', '자동 수집 · ' + (c.date ? '게시일 ' + formatDate(c.date) : '수집일 ' + formatDate(c.firstSeen))));
     return li;
   }
 
+  function renderCard(normalCard) {
+    return function (c) { return c.kind === 'notice' ? noticeCard(c) : normalCard(c); };
+  }
+
   var TAB_VIEWS = {
-    benefits: { items: function () { return benefits.filter(matchesBenefit).sort(compareBenefits); }, render: benefitCard, unit: '개 항목' },
-    events: { items: function () { return events.filter(matchesEvent).sort(compareEvents); }, render: eventCard, unit: '개 행사' },
-    notices: { items: function () { return notices.filter(matchesNotice).sort(compareNotices); }, render: noticeCard, unit: '개 공고' }
+    benefits: { items: function () { return benefits.filter(matchesBenefit).sort(compareBenefits); }, render: renderCard(benefitCard), unit: '개 항목' },
+    events: { items: function () { return events.filter(matchesEvent).sort(compareEvents); }, render: renderCard(eventCard), unit: '개 항목' }
   };
+
+  // 공고 제목이 이미 있는 카드와 같은 프로그램이면 공고는 숨김 (중복 방지)
+  function normTitle(s) {
+    return String(s || '').replace(/20\d{2}\s*년?|\(.*?\)|<.*?>|\[.*?\]|안내|모집|운영/g, '')
+      .replace(/[\s·:,.!?\-'"‘’“”「」『』]/g, '').toLowerCase();
+  }
+
+  function addNotices(list, region) {
+    var names = list.map(function (c) { return normTitle(c.name); }).filter(function (n) { return n.length >= 4; });
+    var urls = {};
+    list.forEach(function (c) { if (!/list/i.test(c.url)) urls[c.url] = true; });
+    notices.forEach(function (n) {
+      if (n.region !== region || urls[n.url]) return;
+      var t = normTitle(n.name);
+      var dup = t.length >= 4 && names.some(function (m) { return m.indexOf(t) !== -1 || t.indexOf(m) !== -1; });
+      if (!dup) list.push(n);
+    });
+  }
 
   function renderList() {
     var view = TAB_VIEWS[state.tab];
@@ -573,8 +599,6 @@
     } else if (state.tab === 'events') {
       state.eGrade = state.eField = '';
       state.eFree = state.ePast = false;
-    } else {
-      state.nSearch = state.nRegion = '';
     }
     update();
   }
@@ -642,7 +666,6 @@
     fillSelect(el['b-grade'], '전체 학년', GRADES);
     fillSelect(el['e-grade'], '전체 학년', GRADES);
 
-    el['n-search'].addEventListener('input', function () { state.nSearch = el['n-search'].value; renderList(); writeQuery(); });
     el['b-search'].addEventListener('input', function () { state.bSearch = el['b-search'].value; renderList(); writeQuery(); });
     [['b-grade', 'bGrade'], ['b-field', 'bField'], ['b-org', 'bOrg'], ['e-grade', 'eGrade']].forEach(function (p) {
       el[p[0]].addEventListener('change', function () { state[p[1]] = el[p[0]].value; update(); });
@@ -660,9 +683,14 @@
     Promise.all([
       load('data/benefits.json', 'benefits', validateBenefit, benefitStatus, benefits),
       load('data/events.json', 'events', validateEvent, eventStatus, events),
+      // 표 형식 목록에서 매일 자동으로 만든 카드 (scripts/collect_programs.py)
+      load('data/auto-benefits.json', 'benefits', validateBenefit, benefitStatus, benefits),
+      load('data/auto-events.json', 'events', validateEvent, eventStatus, events),
       load('data/notices.json', 'notices', validateNotice, noticeStatus, notices, function (data) { noticeInfo = data; })
     ]).then(function () {
-      fillSelect(el['b-field'], '전체 분야', uniqueSorted(benefits, 'field'));
+      fillSelect(el['b-field'], '전체 분야', uniqueSorted(benefits, 'field')); // 공고에는 분야가 없어 넣기 전에 만듦
+      addNotices(benefits, '충남·계룡');
+      addNotices(events, '대전');
       fillSelect(el['b-org'], '전체 기관', uniqueSorted(benefits, 'org'));
       update();
     });

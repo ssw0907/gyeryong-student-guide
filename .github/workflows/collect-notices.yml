@@ -1,4 +1,4 @@
-name: 최신 공고 수집
+name: 최신 공고·프로그램 자동 수집
 
 on:
   schedule:
@@ -19,19 +19,24 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r scripts/requirements.txt
-      - run: python scripts/collect_notices.py
+      - name: 최신 공고 수집
+        run: python scripts/collect_notices.py
+        continue-on-error: true  # 한쪽이 실패해도 다른 쪽 결과는 저장
+      - name: 프로그램 목록 수집 (혜택·행사 자동 카드)
+        run: python scripts/collect_programs.py
+        continue-on-error: true
       - name: 변경 내용 저장
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add data/notices.json
+          git add data/notices.json data/auto-benefits.json data/auto-events.json
           if git diff --cached --quiet; then
             echo "변경 없음"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "최신 공고 자동 수집 $(TZ=Asia/Seoul date +%F)"
+          git commit -m "자동 수집 $(TZ=Asia/Seoul date +%F)"
           git push
           # 워크플로의 푸시는 Pages 배포를 자동으로 시작하지 않을 수 있어 직접 요청함
           gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
