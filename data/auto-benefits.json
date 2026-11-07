@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07",
+  "updatedAt": "2026-11-08",
   "sources": [
     {
       "key": "gryouth",
@@ -13,7 +13,7 @@
       "org": "충남평생교육 강좌 신청",
       "ok": false,
       "kept": 2,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x754eb4811dd0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7027afd95a10>, "
     }
   ],
   "benefits": [
@@ -37,7 +37,7 @@
       "applyUnit": "개인",
       "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
       "source": "계룡시청소년별마루센터",
-      "checkedAt": "2026-11-07",
+      "checkedAt": "2026-11-08",
       "dataYear": "2026",
       "stale": false,
       "auto": true

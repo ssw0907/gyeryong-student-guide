@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07",
+  "updatedAt": "2026-11-08",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -36,7 +36,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7b5226896c90>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7c94bd8df490>, "
     },
     {
       "key": "cnnse-199",
@@ -45,7 +45,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7b5226603710>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7c94bd8d6010>, "
     },
     {
       "key": "icec",
@@ -86,7 +86,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7b5226228310>, 'C"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7c94bd4fbe90>, 'C"
     },
     {
       "key": "cnse-notice",
@@ -95,14 +95,14 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7b5226229e50>, 'C"
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7c94bd501a10>, 'C"
     },
     {
       "key": "pass-activity",
       "org": "충청남도청소년활동진흥센터",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
       "ok": true,
-      "read": 14,
+      "read": 13,
       "kept": 2
     },
     {
