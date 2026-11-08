@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08",
+  "updatedAt": "2026-11-09",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -33,19 +33,17 @@
       "key": "cnnse-40",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7c94bd8df490>, "
+      "ok": true,
+      "read": 10,
+      "kept": 0
     },
     {
       "key": "cnnse-199",
       "org": "충청남도논산계룡교육지원청",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7c94bd8d6010>, "
+      "ok": true,
+      "read": 10,
+      "kept": 2
     },
     {
       "key": "icec",
@@ -53,7 +51,7 @@
       "url": "http://icec.cne.go.kr/home/board/brdList.do?menu_cd=000041",
       "ok": true,
       "read": 10,
-      "kept": 3
+      "kept": 4
     },
     {
       "key": "chsl",
@@ -86,7 +84,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7c94bd4fbe90>, 'C"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "cnse-notice",
@@ -95,7 +94,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnse.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnse.or.kr', port=443) at 0x7c94bd501a10>, 'C"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "pass-activity",
@@ -123,6 +123,16 @@
     }
   ],
   "notices": [
+    {
+      "id": "icec-033b2c70b490",
+      "title": "[충청남도교육청진로융합교육원, 「꿈을 쏘는 아이들」 어린이·청소년 미디어 아카데미 운영]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "date": "2026-11-08",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=745",
+      "firstSeen": "2026-11-09",
+      "grades": []
+    },
     {
       "id": "pass-activity-ca5bb94b7742",
       "title": "2026년 충청남도 청소년활동 정책 성과공유회 참가자 모집 안내",
