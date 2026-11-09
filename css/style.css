@@ -267,6 +267,7 @@ select, input[type="search"] {
 .badge.upcoming { background: var(--upcoming-soft); color: var(--upcoming); }
 .badge.closed { background: var(--closed-soft); color: var(--closed); }
 .badge.neutral { background: var(--closed-soft); color: var(--text); }
+.badge.today { background: var(--accent); color: var(--surface); }
 
 .region { font-size: 0.86rem; color: var(--muted); text-align: right; }
 
@@ -283,6 +284,7 @@ select, input[type="search"] {
 .tag.warn { background: var(--warn-soft); color: var(--warn); border-color: transparent; font-weight: 600; }
 .tag.alert { background: var(--urgent-soft); color: var(--urgent); border-color: transparent; font-weight: 700; }
 .tag.free { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.tag.today { background: var(--accent); color: var(--surface); border-color: transparent; font-weight: 700; }
 .tag.auto { border-style: dashed; }
 
 .info { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; font-size: 0.95rem; }

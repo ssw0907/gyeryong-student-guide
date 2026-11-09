@@ -139,7 +139,8 @@
     var added = isRecent(c.firstSeen, today);
     var changed = isRecent(c.changedOn, today);
     c.isNew = added || changed;
-    c.newLabel = added ? '새 항목' : '내용 변경';
+    c.isToday = c.firstSeen === today || c.changedOn === today;
+    c.newLabel = c.firstSeen === today ? '오늘 추가' : (c.changedOn === today ? '오늘 변경' : (added ? '새 항목' : '내용 변경'));
     c.newDate = (c.changedOn || '') > (c.firstSeen || '') ? c.changedOn : (c.firstSeen || '');
     return c;
   }
@@ -243,10 +244,12 @@
     var age = toDayNumber(today) - toDayNumber(c.sortDate);
     var isNew = age <= NEW_NOTICE_DAYS;
     c.isNew = isNew;
+    // 수집이 새벽에 돌아 전날 게시된 공고도 오늘 들어오므로, 게시일이 아니라 사이트에 처음 들어온 날로 판단
+    c.isToday = isNew && item.firstSeen === today;
     c.newDate = c.sortDate;
     c.oldNotice = age > RECENT_NOTICE_DAYS;
-    c.badge = isNew ? 'open' : 'neutral';
-    c.badgeText = isNew ? '새 공고' : '공고';
+    c.badge = c.isToday ? 'today' : (isNew ? 'open' : 'neutral');
+    c.badgeText = c.isToday ? '오늘 추가' : (isNew ? '새 공고' : '공고');
     c.status = c.oldNotice ? '지난 공고' : '공고';
     c.order = c.oldNotice ? 5 : 1.5;              // 혜택 탭: 모집 중 0, 예정 1, 공고 1.5, 혜택 2 …
     c.sortKey = -toDayNumber(c.sortDate);         // 최신 공고가 위로
@@ -277,7 +280,9 @@
     return !grade || c.grades.length === 0 || c.grades.indexOf(grade) !== -1;
   }
 
+  // 오늘 들어온 항목을 맨 위에, 그다음은 최신순
   function compareNewest(a, b) {
+    if (!!a.isToday !== !!b.isToday) return a.isToday ? -1 : 1;
     return b.newDate.localeCompare(a.newDate) || a.name.localeCompare(b.name, 'ko');
   }
 
@@ -517,7 +522,7 @@
 
   function benefitCard(c) {
     var flags = [];
-    if (c.isNew) flags.push([c.newLabel, 'free']);
+    if (c.isNew) flags.push([c.newLabel, c.isToday ? 'today' : 'free']);
     if (c.applyUnit &&c.applyUnit !== '개인' && c.applyUnit !== UNKNOWN) flags.push([c.applyUnit + ' 신청', 'warn']);
     if (c.stale) flags.push(['오래된 자료 (' + c.dataYear + ')', 'warn']);
     if (c.auto) flags.push(['자동 수집', 'auto']);
@@ -534,7 +539,7 @@
 
   function eventCard(c) {
     var flags = [];
-    if (c.isNew) flags.push([c.newLabel, 'free']);
+    if (c.isNew) flags.push([c.newLabel, c.isToday ? 'today' : 'free']);
     if (c.targetUnconfirmed) flags.push(['대상 확인 필요', 'warn']);
     if (c.residency.indexOf('한정') !== -1) flags.push([c.residency, 'warn']);
     if (c.urgent) flags.push(['신청 마감 임박', 'alert']);
@@ -597,10 +602,14 @@
 
   // 지금 고른 조건에서 새 항목이 몇 개인지 체크박스 옆에 보여 줌
   function renderNewCounts() {
-    var b = benefits.filter(function (c) { return c.isNew && matchesBenefit(c, true); }).length;
-    var e = events.filter(function (c) { return c.isNew && matchesEvent(c, true); }).length;
-    el['b-new-label'].textContent = '새로 올라오거나 바뀐 것만 보기 (최근 ' + NEW_NOTICE_DAYS + '일, ' + b + '건)';
-    el['e-new-label'].textContent = '새로 올라오거나 바뀐 것만 보기 (최근 ' + NEW_NOTICE_DAYS + '일, ' + e + '건)';
+    var b = benefits.filter(function (c) { return c.isNew && matchesBenefit(c, true); });
+    var e = events.filter(function (c) { return c.isNew && matchesEvent(c, true); });
+    function label(list) {
+      var today = list.filter(function (c) { return c.isToday; }).length;
+      return '새로 올라오거나 바뀐 것만 보기 (최근 ' + NEW_NOTICE_DAYS + '일 ' + list.length + '건, 오늘 ' + today + '건)';
+    }
+    el['b-new-label'].textContent = label(b);
+    el['e-new-label'].textContent = label(e);
   }
 
   // 공고 제목이 이미 있는 카드와 같은 프로그램이면 공고는 숨김 (중복 방지)
