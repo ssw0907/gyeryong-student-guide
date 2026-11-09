@@ -43,7 +43,8 @@
       "checkedAt": "2026-11-09",
       "residency": "제한 문구 없음(목록 기준, 신청 전 확인)",
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     }
   ]
 }

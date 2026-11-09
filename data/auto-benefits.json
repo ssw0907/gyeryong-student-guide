@@ -13,14 +13,14 @@
       "org": "충남평생교육 강좌 신청",
       "ok": false,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7971631ecad0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x793853849d90>, "
     },
     {
       "key": "gov24",
       "org": "정부 공공서비스(혜택) 정보",
       "ok": true,
-      "kept": 36,
-      "read": 41
+      "kept": 26,
+      "read": 31
     }
   ],
   "benefits": [
@@ -48,7 +48,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-bd06648ecc",
@@ -74,33 +75,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-08cfcbddaa",
-      "name": "소년원 출원생 등 소외계층 청소년을 위한 청소년자립생활관 운영 지원",
-      "type": "혜택",
-      "field": "보육·교육",
-      "target": "○ 소년원 출원생, 보호관찰 대상자 등 소외계층 청소년",
-      "grades": [],
-      "content": "소외계층 청소년에게 생활공간을 제공하여 무료숙식, 대학진학 등 사회정착 지원",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "접수기관 별 상이",
-      "cost": "",
-      "org": "법무부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=589801&bnefType=all&svcId=127000000037",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-8017f0cdcd",
@@ -126,7 +102,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-fdec323d08",
@@ -152,7 +129,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-24193502aa",
@@ -178,7 +156,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-e86fe6e448",
@@ -204,7 +183,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-48f1db012f",
@@ -230,7 +210,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-df2efd9c14",
@@ -256,7 +237,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-0b39273875",
@@ -282,7 +264,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-07dfb9ec2a",
@@ -308,85 +291,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-f6e6af97e3",
-      "name": "학교 밖 청소년 건강검진 지원",
-      "type": "혜택",
-      "field": "보건·의료",
-      "target": "○ 9세 이상 18세 이하 학교 밖 청소년",
-      "grades": [],
-      "content": "학교 밖 청소년을 대상으로 건강검진 비용 전액 지원(본인 부담 없음)",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청||직접입력",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "상시신청",
-      "cost": "",
-      "org": "성평등가족부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=588149&bnefType=all&svcId=138300000033",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-f6153212d2",
-      "name": "고립·은둔 청소년 원스톱 패키지 지원",
-      "type": "혜택",
-      "field": "보호·돌봄",
-      "target": "○ 9세~18세 연령의 고립･은둔 청소년 및 그 가족(보호자) - 「고립･은둔 청소년 스크리닝 척도」를 활용하여 대상자 판정 후, 고립형 또는 은둔형으로 위기 유형 분류 - (우선 지원 대상) 고립･은둔 고위험군인…",
-      "grades": [],
-      "content": "고립·은둔형 청소년 원스톱 지원체계 구축‧운영",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "상시신청",
-      "cost": "",
-      "org": "성평등가족부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=2147920&bnefType=all&svcId=138300000054",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-75ee48e08b",
-      "name": "가정 밖 청소년 자립지원",
-      "type": "혜택",
-      "field": "주거·자립",
-      "target": "청소년쉼터, 청소년자립지원관, 청소년회복지원시설 이용 청소년 대상 (이하 ‘청소년복지시설 청소년’)- 자립지원수당은 청소년쉼터, 청소년자립지원관 이용 청소년에 한함",
-      "grades": [],
-      "content": "자립지원서비스 제공을 통해 신속한 가정복귀와 사회진출 지원",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "상시신청",
-      "cost": "",
-      "org": "성평등가족부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=2149417&bnefType=all&svcId=138300000063",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-d9af3b37f3",
@@ -412,7 +318,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-ced10bb545",
@@ -438,7 +345,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-0afaa647c7",
@@ -464,33 +372,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-4c14f9d2a5",
-      "name": "새마을지도자 자녀장학금 지원",
-      "type": "장학금",
-      "field": "장학",
-      "target": "○ 2년이상 봉사한 새마을지도자 대학생 자녀 중 1. 유공자 : 새마을사업에 특별히 공이 있는 전･현직 새마을지도자 자녀(경력 2년 이상을 요하지 아니함) 2. 우등생 : 품행이 단정하고 학업성적이 우수한 자로 학교…",
-      "grades": [],
-      "content": "지역사회 발전에 이바지한 새마을지도자 자녀로서 재능이 우수한 학생에게 장학금 지원",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "접수기관 별 상이",
-      "cost": "",
-      "org": "충청남도",
-      "scope": "충남 전체",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=1001248&bnefType=all&svcId=644000000181",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-6cef5e8757",
@@ -516,7 +399,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-1070b1d55b",
@@ -542,7 +426,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-7a7388562d",
@@ -578,7 +463,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-423635bb6e",
@@ -604,7 +490,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-2d461d2f31",
@@ -630,7 +517,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-726ef93501",
@@ -656,7 +544,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-4c0fe70249",
@@ -682,7 +571,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-2944b3dd68",
@@ -708,7 +598,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-a1910ac9ce",
@@ -734,7 +625,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-4cc854e1ce",
@@ -760,33 +652,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-8b6bf86250",
-      "name": "청소년산모 임신·출산 의료비 지원",
-      "type": "혜택",
-      "field": "임신·출산",
-      "target": "○ 만 19세 이하 산모",
-      "grades": [],
-      "content": "만 19세 이하 임산부에게 국민행복바우처 지원(1회당 120만 원 이내)",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "기타 온라인신청||방문신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "임신확인서 상 임신확인일 기준으로 만 19세까지 신청 가능",
-      "cost": "",
-      "org": "보건복지부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=592445&bnefType=all&svcId=SD0000006936",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-3efe53c2d9",
@@ -812,33 +679,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-30c5904726",
-      "name": "실종아동 보호 및 지원",
-      "type": "혜택",
-      "field": "행정·안전",
-      "target": "○ 실종아동, 실종 장애인(지적·자폐성·정신)과 그 가족",
-      "grades": [],
-      "content": "실종아동 및 장애인의 가족을 위한 예방교육, 가족지원 등의 서비스 제공",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "직접입력",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "상시신청",
-      "cost": "",
-      "org": "보건복지부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=680933&bnefType=all&svcId=WII000000400",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-f5b7d99382",
@@ -864,7 +706,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-cfd2b864c7",
@@ -890,7 +733,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     },
     {
       "id": "auto-gov24-357d98e61a",
@@ -916,85 +760,8 @@
       "dataYear": "2026",
       "stale": false,
       "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-05b99a9609",
-      "name": "학교 밖 청소년 지원센터 운영",
-      "type": "혜택",
-      "field": "보육·교육",
-      "target": "○ 9세 이상~ 24세 이하 청소년",
-      "grades": [],
-      "content": "학교 밖 청소년에게 상담, 교육, 직업체험 및 취업지원, 자립 관련 프로그램 제공",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청||직접입력",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "자세한 날짜는 학교밖청소년지원센터 서비스담당자 확인 필요",
-      "cost": "",
-      "org": "성평등가족부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=103423&bnefType=all&svcId=WII000000810",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-d21e3f0897",
-      "name": "청소년치료재활센터 운영 지원",
-      "type": "혜택",
-      "field": "보육·교육",
-      "target": "○ 정서·행동적 문제를 가진 청소년(만 9세 ~ 18세) - 불안/우울 등 심리 정서 문제, 학대 및 학교폭력 피해, 학교 부적응, 주의력결핍과잉행동장애(ADHD), 인터넷‧스마트폰 과의존 청소년 등",
-      "grades": [],
-      "content": "정서·행동적 문제를 가진 청소년을 위한 상담 및 치료, 교육, 자립 등의 프로그램 제공",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "기타 온라인신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "상시신청",
-      "cost": "",
-      "org": "성평등가족부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=87866&bnefType=all&svcId=WII000001440",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
-    },
-    {
-      "id": "auto-gov24-330eebdad9",
-      "name": "위기청소년 특별 지원",
-      "type": "혜택",
-      "field": "생활안정",
-      "target": "「대상기준」과 「소득기준」을 모두 만족하는 9세 이상에서 24세 이하 청소년 ○ 대상기준 ∙ ｢청소년복지 지원법｣ 제19조제1항에 따른 교육적 선도 대상자 중 비행･일탈 예방을 위하여 지원이 필요한 청소년 ∙ ｢학교…",
-      "grades": [],
-      "content": "위기청소년에게 생활, 건강, 자립, 상담, 법률, 활동 지원 (지원내용별 금액 상이)",
-      "schedule": "",
-      "place": "",
-      "applyMethod": "방문신청",
-      "applyStart": "",
-      "applyEnd": "",
-      "applyNote": "접수기관 별 상이",
-      "cost": "",
-      "org": "성평등가족부",
-      "scope": "전국",
-      "applyUnit": "확인 필요",
-      "url": "https://plus.gov.kr/portal/benefitV2/benefitTotalSrvcList/benefitSrvcDtl?svcSeq=748938&bnefType=all&svcId=WII000001600",
-      "source": "정부 공공서비스(혜택) 정보",
-      "checkedAt": "2026-11-09",
-      "dataYear": "2026",
-      "stale": false,
-      "auto": true,
-      "firstSeen": ""
+      "firstSeen": "",
+      "changedOn": ""
     }
   ]
 }
