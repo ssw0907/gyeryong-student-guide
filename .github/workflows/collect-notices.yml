@@ -24,6 +24,8 @@ jobs:
       - name: 프로그램 목록 수집 (혜택·행사 자동 카드)
         run: python scripts/collect_programs.py
         continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       - name: 변경 내용 저장
         run: |
           git add data/notices.json data/auto-benefits.json data/auto-events.json

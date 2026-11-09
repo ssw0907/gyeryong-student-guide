@@ -4,12 +4,14 @@
   - 계룡시청소년별마루센터 프로그램  → data/auto-benefits.json
   - 충남평생교육 강좌(cnall) 중 도 단위 기관 강좌 → data/auto-benefits.json
   - 국립중앙과학관 교육 프로그램      → data/auto-events.json
+  - 정부 공공서비스(혜택) 정보 API   → data/auto-benefits.json (인증키: 환경 변수 DATA_GO_KR_KEY)
 손으로 정리한 항목(benefits.json, events.json)과 같은 프로그램은 넣지 않는다.
 학년이나 날짜를 확실히 읽지 못하면 비워 두어 사이트에 "확인 필요"로 나오게 한다.
 한 기관이 실패하면 그 기관은 지난번 결과를 그대로 둔다.
 """
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -17,6 +19,7 @@ from datetime import date, datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 
+import requests
 from bs4 import BeautifulSoup
 
 from collect_notices import KST, RobotsBlocked, clean, fetch, robots_allows
@@ -45,6 +48,12 @@ FIELD_WORDS = [
     ('역사', ['역사', '문화유산', '박물관']),
     ('문화·예술', ['미술', '음악', '공예', '그리기', '만들기', '예술', '공연', '댄스', '연극', '영화', '사진', '종이접기']),
 ]
+
+# 정부 혜택 API에서 넣을 범위. 다른 시·군과 대전 혜택은 대부분 그 지역 주민만 받을 수 있어 뺀다.
+GOV24_URL = 'https://api.odcloud.kr/api/gov24/v3/serviceList'
+GOV24_LOCAL = re.compile(r'계룡|^충청남도교육청|^충남교육청')           # 학생 대상이 아니어도 모두 넣는 기관
+GOV24_STUDENT = re.compile(r'초등|중학|학생|청소년|아동|어린이|자녀|입학|교복|장학|학교|수학여행|교육비')
+GOV24_NOT_STUDENT = re.compile(r'대학생|대학원생|유학생')
 
 TODAY = datetime.now(KST).date()
 
@@ -296,6 +305,63 @@ def collect_science():
     return items
 
 
+def shorten(text, limit=120):
+    text = clean(text)
+    return text if len(text) <= limit else text[:limit].rstrip() + '…'
+
+
+def gov24_wanted(row):
+    org = row.get('소관기관명') or ''
+    if GOV24_LOCAL.search(org):
+        return True
+    if org != '충청남도' and row.get('소관기관유형') != '중앙행정기관':
+        return False
+    text = GOV24_NOT_STUDENT.sub('', row.get('서비스명') or '')
+    return bool(GOV24_STUDENT.search(text))
+
+
+def collect_gov24():
+    key = os.environ.get('DATA_GO_KR_KEY', '').strip()
+    if not key:
+        raise ValueError('환경 변수 DATA_GO_KR_KEY가 없음')
+    rows, page = [], 1
+    while True:
+        res = requests.get(GOV24_URL, params={'page': page, 'perPage': 1000, 'returnType': 'JSON'},
+                           headers={'Authorization': 'Infuser ' + key}, timeout=60)
+        res.raise_for_status()
+        data = res.json()
+        rows += data.get('data') or []
+        if not data.get('data') or len(rows) >= (data.get('totalCount') or 0):
+            break
+        page += 1
+        time.sleep(0.5)
+
+    items = []
+    for row in rows:
+        name = clean(row.get('서비스명'))
+        url = row.get('상세조회URL') or ''
+        if not name or not url.startswith(('http://', 'https://')) or not gov24_wanted(row):
+            continue
+        org = clean(row.get('소관기관명'))
+        kind = '장학금' if '장학' in name else '혜택'
+        deadline = clean(row.get('신청기한'))
+        # 연도까지 적힌 기한만 날짜로 읽음 ('매년 10~11월 중' 같은 글은 그대로 보여 줌)
+        apply_start, apply_end = parse_dates(deadline) if re.search(r'20\d{2}', deadline) else ('', '')
+        items.append({
+            'id': make_id('gov24', str(row.get('서비스ID') or name)),
+            'name': name, 'type': kind, 'field': '장학' if kind == '장학금' else clean(row.get('서비스분야')) or '기타',
+            'target': shorten(row.get('지원대상')) or UNKNOWN, 'grades': parse_grades(name) or [],
+            'content': shorten(row.get('서비스목적요약') or row.get('지원내용')) or AUTO_NOTE,
+            'schedule': '', 'place': '', 'applyMethod': shorten(row.get('신청방법'), 80),
+            'applyStart': apply_start, 'applyEnd': apply_end, 'applyNote': shorten(deadline, 80),
+            'cost': '', 'org': org,
+            'scope': '계룡시' if '계룡' in org else ('전국' if row.get('소관기관유형') == '중앙행정기관' else '충남 전체'),
+            'applyUnit': UNKNOWN, 'url': url, 'source': '정부 공공서비스(혜택) 정보', 'checkedAt': TODAY.isoformat(),
+            'dataYear': TODAY.isoformat()[:4], 'stale': False, 'auto': True,
+        })
+    return items
+
+
 def formatted_range(start, end):
     if not start:
         return ''
@@ -333,6 +399,7 @@ SOURCES = [
     ('gryouth', '계룡시청소년별마루센터', collect_gryouth, 'benefits'),
     ('cnall', '충남평생교육 강좌 신청', collect_cnall, 'benefits'),
     ('science', '국립중앙과학관', collect_science, 'events'),
+    ('gov24', '정부 공공서비스(혜택) 정보', collect_gov24, 'benefits'),
 ]
 
 
