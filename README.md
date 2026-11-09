@@ -173,7 +173,8 @@ GitHub Actions가 매일 오전 6시(한국 시간)쯤 `scripts/collect_notices.
 - 정부 혜택 API는 [공공데이터포털](https://www.data.go.kr/data/15113968/openapi.do) 인증키가 필요합니다. 저장소 **Settings → Secrets and variables → Actions**의 `DATA_GO_KR_KEY`에 저장되어 있습니다. 키가 없거나 호출이 실패한 날은 지난 결과를 그대로 둡니다.
 - 다른 시·군과 대전의 혜택은 대부분 그 지역 주민만 받을 수 있어 넣지 않습니다. 범위는 `collect_programs.py`의 `gov24_wanted`에서 바꿉니다.
 - 농업, 노인, 청년·대학생, 유아, 시설·사업자 대상처럼 초·중학생과 학부모에게 무관한 혜택은 뺍니다. 기준은 `GOV24_UNRELATED_NAME`, `GOV24_UNRELATED_TARGET`, `GOV24_UNRELATED_FIELD`에서 바꿉니다.
-- 한부모, 입양, 저소득, 가정위탁·보호아동, 장애, 다문화·북한이탈주민, 보훈대상자, 범죄 피해 아동이 조건인 혜택도 뺍니다. 다자녀 가정이나 희망자도 받을 수 있는 혜택은 남깁니다. 기준은 `GOV24_CONDITION_NAME`, `GOV24_CONDITION_TARGET`, `GOV24_OPEN_TO_ALL`에서 바꿉니다.
+- 한부모, 입양, 저소득, 가정위탁·보호아동, 장애, 다문화·북한이탈주민, 보훈대상자, 범죄 피해 아동이 조건인 혜택도 뺍니다. 제목이 아니라 지원 대상 글로 판단하며, 대상을 알 수 없거나 다자녀 가정·희망자도 받을 수 있는 혜택은 남깁니다. 기준은 `GOV24_CONDITION_TARGET`, `GOV24_OPEN_TO_ALL`에서 바꿉니다. 게시판 공고는 대상을 확인할 수 없어 이 기준으로 빼지 않습니다.
+- 자동 카드의 `firstSeen`은 처음 수집한 날입니다. 화면의 "새로 올라온 것만 보기"는 `firstSeen`이 최근 7일인 자동 카드와, 게시일(없으면 수집일)이 최근 7일인 공고를 보여 줍니다. 직접 입력한 항목은 해당하지 않습니다.
 
 ## 조사한 기관 (최종 조사 2026-11-03)
 

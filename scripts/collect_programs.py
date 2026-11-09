@@ -62,13 +62,13 @@ GOV24_UNRELATED_NAME = re.compile(
 GOV24_UNRELATED_TARGET = re.compile(r'대학(?!부설)|(?:60|65|70|80)세\s*이상|18세\s*[~～]\s*39세')
 GOV24_SCHOOL_TARGET = re.compile(r'초등|중학|고등학|초\s*[·,]\s*중|자녀|아동|청소년')
 # 한부모·입양·저소득, 가정위탁·보호아동, 장애, 다문화·북한이탈주민, 보훈대상자, 범죄 피해 아동이 조건인 혜택.
-# 일반 가정도 받을 수 있으면(GOV24_OPEN_TO_ALL) 남긴다.
-GOV24_CONDITION_NAME = re.compile(
-    r'한부모|입양|저소득|차상위|기초생활|취약계층|위탁|보호대상|아동보호비|공동생활|아동복지시설|복지시설\s*퇴소|'
-    r'장애|특수학급|다문화|이주배경|북한이탈|북향민|탈북|보훈|학대|성폭력|성매매|피해자|피해아동')
+# 제목이 아니라 지원 대상 글로 판단한다. 대상을 알 수 없거나 일반 가정도 받을 수 있으면(GOV24_OPEN_TO_ALL) 남긴다.
 GOV24_CONDITION_TARGET = re.compile(
-    r'한부모|입양(?!으로)|저소득|차상위|기초생활|기초수급|수급자|수급가구|교육급여|중위소득\s*\d{1,2}\s*[%~]|'
-    r'가정위탁|위탁\s*가정|보호대상\s*아동|보훈대상')
+    r'한부모|입양(?!으로)|저소득|차상위|기초생활|기초수급|수급자|수급가구|교육급여|중위소득\s*\d{1,2}\s*[%~]|취약계층|'
+    r'가정위탁|위탁\s*가정|위탁\s*아동|보호대상\s*아동|보호\s*아동|아동복지시설|공동생활가정|'
+    r'등록\S{0,3}\s*장애|장애인복지법|장애\s*(?:아동|학생|청소년|선수)|특수교육대상|'
+    r'다문화|이주배경|북한\s*이탈|북향민|탈북|보훈|국가유공자|독립유공자|'
+    r'학대\s*피해|성폭력|성매매|범죄\s*피해|피해자')
 GOV24_OPEN_TO_ALL = re.compile(r'다자녀|희망자|우선\s*대상자\s*고려')
 
 TODAY = datetime.now(KST).date()
@@ -331,7 +331,6 @@ def gov24_unrelated(row):
     target = row.get('지원대상') or ''
     return (row.get('서비스분야') in GOV24_UNRELATED_FIELD
             or bool(GOV24_UNRELATED_NAME.search(name))
-            or bool(GOV24_CONDITION_NAME.search(name))
             or bool(GOV24_CONDITION_TARGET.search(target) and not GOV24_OPEN_TO_ALL.search(target))
             or bool(GOV24_UNRELATED_TARGET.search(target) and not GOV24_SCHOOL_TARGET.search(name + ' ' + target)))
 
@@ -462,10 +461,13 @@ def main():
         print('%-8s %s kept=%d %s' % (key, 'ok  ' if status['ok'] else 'FAIL', status['kept'], status.get('error', '')))
 
     for kind, path in (('benefits', OUT_BENEFITS), ('events', OUT_EVENTS)):
+        previous = {i['id']: i for i in outputs[kind].get(kind, [])}
         seen, unique = set(), []
         for item in result[kind]['items']:
             if item['id'] not in seen:
                 seen.add(item['id'])
+                # 처음 수집한 날. 이 값이 없던 때부터 있던 카드는 빈 값으로 두어 새 항목으로 보이지 않게 한다.
+                item['firstSeen'] = previous[item['id']].get('firstSeen', '') if item['id'] in previous else TODAY.isoformat()
                 unique.append(item)
         path.write_text(json.dumps({'updatedAt': TODAY.isoformat(), 'sources': result[kind]['sources'], kind: unique},
                                    ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')

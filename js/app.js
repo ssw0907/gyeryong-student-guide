@@ -20,8 +20,8 @@
 
   var state = {
     tab: 'benefits',
-    bSearch: '', bGrade: '', bType: '', bScope: '', bField: '', bOrg: '', bClosed: false,
-    eGrade: '', eField: '', eFree: false, ePast: false
+    bSearch: '', bGrade: '', bType: '', bScope: '', bField: '', bOrg: '', bClosed: false, bNew: false,
+    eGrade: '', eField: '', eFree: false, ePast: false, eNew: false
   };
   var benefits = [];
   var events = [];
@@ -29,8 +29,8 @@
   var noticeInfo = null;
 
   var el = {};
-  ['tabs', 'filters-benefits', 'filters-events', 'b-search', 'b-grade', 'b-type', 'b-scope', 'b-field', 'b-org', 'b-closed',
-    'e-grade', 'e-field', 'e-free', 'e-past', 'n-meta', 'cards', 'result-count', 'empty', 'notice', 'reset-btn', 'empty-reset-btn'
+  ['tabs', 'filters-benefits', 'filters-events', 'b-search', 'b-grade', 'b-type', 'b-scope', 'b-field', 'b-org', 'b-closed', 'b-new', 'b-new-label',
+    'e-grade', 'e-field', 'e-free', 'e-past', 'e-new', 'e-new-label', 'n-meta', 'cards', 'result-count', 'empty', 'notice', 'reset-btn', 'empty-reset-btn'
   ].forEach(function (id) { el[id] = document.getElementById(id); });
 
   /* ---------- 날짜 (한국 시간 기준) ---------- */
@@ -95,7 +95,7 @@
   }
 
   function validateBenefit(item, seenIds) {
-    var errors = validateCommon(item, BENEFIT_REQUIRED, seenIds, ['applyStart', 'applyEnd']);
+    var errors = validateCommon(item, BENEFIT_REQUIRED, seenIds, ['applyStart', 'applyEnd', 'firstSeen']);
     if (errors.length && !item.id) return errors;
     if (TYPES.indexOf(item.type) === -1) errors.push('type은 ' + TYPES.join(', ') + ' 중 하나여야 합니다');
     if (SCOPES.indexOf(item.scope) === -1) errors.push('scope는 ' + SCOPES.join(' 또는 ') + '여야 합니다');
@@ -103,7 +103,7 @@
   }
 
   function validateEvent(item, seenIds) {
-    var errors = validateCommon(item, EVENT_REQUIRED, seenIds, ['eventStart', 'eventEnd', 'applyStart', 'applyEnd']);
+    var errors = validateCommon(item, EVENT_REQUIRED, seenIds, ['eventStart', 'eventEnd', 'applyStart', 'applyEnd', 'firstSeen']);
     if (errors.length && !item.id) return errors;
     if (EVENT_FIELDS.indexOf(item.field) === -1) errors.push('field는 ' + EVENT_FIELDS.join(', ') + ' 중 하나여야 합니다');
     if (item.eventStart && item.eventEnd && item.eventStart > item.eventEnd) errors.push('eventStart가 eventEnd보다 늦습니다');
@@ -130,8 +130,15 @@
     return left === 0 ? 'D-DAY' : 'D-' + left;
   }
 
+  // 자동 카드는 처음 수집한 날이 최근이면 새 항목 (직접 입력한 항목에는 이 값이 없음)
+  function markNew(c, today) {
+    c.newDate = c.firstSeen || '';
+    c.isNew = !!c.firstSeen && toDayNumber(today) - toDayNumber(c.firstSeen) <= NEW_NOTICE_DAYS;
+    return c;
+  }
+
   function benefitStatus(item, today) {
-    var c = Object.assign({}, item);
+    var c = markNew(Object.assign({}, item), today);
     if (item.type === '혜택') {
       c.status = '혜택';
       c.badge = 'benefit';
@@ -169,7 +176,7 @@
   }
 
   function eventStatus(item, today) {
-    var c = Object.assign({}, item);
+    var c = markNew(Object.assign({}, item), today);
     var t = toDayNumber(today);
     var start = item.eventStart ? toDayNumber(item.eventStart) : null;
     var end = item.eventEnd ? toDayNumber(item.eventEnd) : start;
@@ -228,6 +235,8 @@
     c.sortDate = item.date || item.firstSeen;
     var age = toDayNumber(today) - toDayNumber(c.sortDate);
     var isNew = age <= NEW_NOTICE_DAYS;
+    c.isNew = isNew;
+    c.newDate = c.sortDate;
     c.oldNotice = age > RECENT_NOTICE_DAYS;
     c.badge = isNew ? 'open' : 'neutral';
     c.badgeText = isNew ? '새 공고' : '공고';
@@ -261,7 +270,13 @@
     return !grade || c.grades.length === 0 || c.grades.indexOf(grade) !== -1;
   }
 
-  function matchesBenefit(c) {
+  function compareNewest(a, b) {
+    return b.newDate.localeCompare(a.newDate) || a.name.localeCompare(b.name, 'ko');
+  }
+
+  // anyAge: '새로 올라온 것만' 체크와 상관없이 판단 (체크박스 옆 건수를 셀 때 사용)
+  function matchesBenefit(c, anyAge) {
+    if (state.bNew && !c.isNew && anyAge !== true) return false;
     if ((c.status === '마감' || c.oldNotice) && !state.bClosed) return false;
     if (!matchesGrade(c, state.bGrade)) return false;
     if (state.bType && c.type !== state.bType) return false;
@@ -276,7 +291,8 @@
     return true;
   }
 
-  function matchesEvent(c) {
+  function matchesEvent(c, anyAge) {
+    if (state.eNew && !c.isNew && anyAge !== true) return false;
     if ((c.status === '지난 행사' || c.applyEnded || c.oldNotice) && !state.ePast) return false;
     if (!matchesGrade(c, state.eGrade)) return false;
     if (state.eField && c.field !== state.eField) return false;
@@ -300,6 +316,8 @@
     state.bClosed = q.get('closed') === '1';
     state.eFree = q.get('free') === '1';
     state.ePast = q.get('past') === '1';
+    state.bNew = q.get('new') === '1';
+    state.eNew = q.get('enew') === '1';
   }
 
   function writeQuery() {
@@ -311,6 +329,8 @@
     if (state.bClosed) q.set('closed', '1');
     if (state.eFree) q.set('free', '1');
     if (state.ePast) q.set('past', '1');
+    if (state.bNew) q.set('new', '1');
+    if (state.eNew) q.set('enew', '1');
     var s = q.toString();
     history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
   }
@@ -383,9 +403,11 @@
     el['b-field'].value = state.bField;
     el['b-org'].value = state.bOrg;
     el['b-closed'].checked = state.bClosed;
+    el['b-new'].checked = state.bNew;
     el['e-grade'].value = state.eGrade;
     el['e-free'].checked = state.eFree;
     el['e-past'].checked = state.ePast;
+    el['e-new'].checked = state.eNew;
   }
 
   // 공고 카드 설명과, 자동으로 읽지 못해 직접 확인해야 하는 기관 안내 (목록 아래)
@@ -488,6 +510,7 @@
 
   function benefitCard(c) {
     var flags = [];
+    if (c.isNew) flags.push(['새 항목', 'free']);
     if (c.applyUnit && c.applyUnit !== '개인' && c.applyUnit !== UNKNOWN) flags.push([c.applyUnit + ' 신청', 'warn']);
     if (c.stale) flags.push(['오래된 자료 (' + c.dataYear + ')', 'warn']);
     if (c.auto) flags.push(['자동 수집', 'auto']);
@@ -504,6 +527,7 @@
 
   function eventCard(c) {
     var flags = [];
+    if (c.isNew) flags.push(['새 항목', 'free']);
     if (c.targetUnconfirmed) flags.push(['대상 확인 필요', 'warn']);
     if (c.residency.indexOf('한정') !== -1) flags.push([c.residency, 'warn']);
     if (c.urgent) flags.push(['신청 마감 임박', 'alert']);
@@ -554,9 +578,23 @@
   }
 
   var TAB_VIEWS = {
-    benefits: { items: function () { return benefits.filter(matchesBenefit).sort(compareBenefits); }, render: renderCard(benefitCard), unit: '개 항목' },
-    events: { items: function () { return events.filter(matchesEvent).sort(compareEvents); }, render: renderCard(eventCard), unit: '개 항목' }
+    benefits: {
+      items: function () { return benefits.filter(function (c) { return matchesBenefit(c); }).sort(state.bNew ? compareNewest : compareBenefits); },
+      render: renderCard(benefitCard), unit: '개 항목'
+    },
+    events: {
+      items: function () { return events.filter(function (c) { return matchesEvent(c); }).sort(state.eNew ? compareNewest : compareEvents); },
+      render: renderCard(eventCard), unit: '개 항목'
+    }
   };
+
+  // 지금 고른 조건에서 새 항목이 몇 개인지 체크박스 옆에 보여 줌
+  function renderNewCounts() {
+    var b = benefits.filter(function (c) { return c.isNew && matchesBenefit(c, true); }).length;
+    var e = events.filter(function (c) { return c.isNew && matchesEvent(c, true); }).length;
+    el['b-new-label'].textContent = '새로 올라온 것만 보기 (최근 ' + NEW_NOTICE_DAYS + '일, ' + b + '건)';
+    el['e-new-label'].textContent = '새로 올라온 것만 보기 (최근 ' + NEW_NOTICE_DAYS + '일, ' + e + '건)';
+  }
 
   // 공고 제목이 이미 있는 카드와 같은 프로그램이면 공고는 숨김 (중복 방지)
   function normTitle(s) {
@@ -579,6 +617,7 @@
   function renderList() {
     var view = TAB_VIEWS[state.tab];
     var list = view.items();
+    renderNewCounts();
     el.cards.textContent = '';
     list.forEach(function (c) { el.cards.appendChild(view.render(c)); });
     el['result-count'].textContent = list.length + view.unit;
@@ -595,10 +634,10 @@
   function resetFilters() {
     if (state.tab === 'benefits') {
       state.bSearch = state.bGrade = state.bType = state.bScope = state.bField = state.bOrg = '';
-      state.bClosed = false;
+      state.bClosed = state.bNew = false;
     } else if (state.tab === 'events') {
       state.eGrade = state.eField = '';
-      state.eFree = state.ePast = false;
+      state.eFree = state.ePast = state.eNew = false;
     }
     update();
   }
@@ -673,6 +712,8 @@
     el['b-closed'].addEventListener('change', function () { state.bClosed = el['b-closed'].checked; update(); });
     el['e-free'].addEventListener('change', function () { state.eFree = el['e-free'].checked; update(); });
     el['e-past'].addEventListener('change', function () { state.ePast = el['e-past'].checked; update(); });
+    el['b-new'].addEventListener('change', function () { state.bNew = el['b-new'].checked; update(); });
+    el['e-new'].addEventListener('change', function () { state.eNew = el['e-new'].checked; update(); });
     el['reset-btn'].addEventListener('click', resetFilters);
     el['empty-reset-btn'].addEventListener('click', resetFilters);
 

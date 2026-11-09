@@ -22,6 +22,12 @@
 
     <section class="filters" aria-label="필터" id="filters-benefits">
       <div class="filter-row">
+        <label class="toggle">
+          <input type="checkbox" id="b-new">
+          <span id="b-new-label">새로 올라온 것만 보기</span>
+        </label>
+      </div>
+      <div class="filter-row">
         <label class="filter-label" for="b-search">검색</label>
         <input type="search" id="b-search" placeholder="이름, 기관, 내용으로 찾기">
       </div>
@@ -54,6 +60,12 @@
     </section>
 
     <section class="filters" aria-label="필터" id="filters-events" hidden>
+      <div class="filter-row">
+        <label class="toggle">
+          <input type="checkbox" id="e-new">
+          <span id="e-new-label">새로 올라온 것만 보기</span>
+        </label>
+      </div>
       <div class="filter-row">
         <label class="filter-label" for="e-grade">학년</label>
         <select id="e-grade"></select>
