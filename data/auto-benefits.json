@@ -11,9 +11,9 @@
     {
       "key": "cnall",
       "org": "충남평생교육 강좌 신청",
-      "ok": true,
+      "ok": false,
       "kept": 0,
-      "read": 1
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7971631ecad0>, "
     },
     {
       "key": "gov24",
@@ -47,7 +47,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-bd06648ecc",
@@ -72,7 +73,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-08cfcbddaa",
@@ -97,7 +99,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-8017f0cdcd",
@@ -122,7 +125,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-fdec323d08",
@@ -147,7 +151,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-24193502aa",
@@ -172,7 +177,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-e86fe6e448",
@@ -197,7 +203,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-48f1db012f",
@@ -222,7 +229,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-df2efd9c14",
@@ -247,7 +255,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-0b39273875",
@@ -272,7 +281,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-07dfb9ec2a",
@@ -297,7 +307,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-f6e6af97e3",
@@ -322,7 +333,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-f6153212d2",
@@ -347,7 +359,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-75ee48e08b",
@@ -372,7 +385,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-d9af3b37f3",
@@ -397,7 +411,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-ced10bb545",
@@ -422,7 +437,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-0afaa647c7",
@@ -447,7 +463,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-4c14f9d2a5",
@@ -472,7 +489,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-6cef5e8757",
@@ -497,7 +515,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-1070b1d55b",
@@ -522,7 +541,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-7a7388562d",
@@ -557,7 +577,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-423635bb6e",
@@ -582,7 +603,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-2d461d2f31",
@@ -607,7 +629,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-726ef93501",
@@ -632,7 +655,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-4c0fe70249",
@@ -657,7 +681,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-2944b3dd68",
@@ -682,7 +707,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-a1910ac9ce",
@@ -707,7 +733,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-4cc854e1ce",
@@ -732,7 +759,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-8b6bf86250",
@@ -757,7 +785,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-3efe53c2d9",
@@ -782,7 +811,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-30c5904726",
@@ -807,7 +837,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-f5b7d99382",
@@ -832,7 +863,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-cfd2b864c7",
@@ -857,7 +889,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-357d98e61a",
@@ -882,7 +915,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-05b99a9609",
@@ -907,7 +941,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-d21e3f0897",
@@ -932,7 +967,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     },
     {
       "id": "auto-gov24-330eebdad9",
@@ -957,7 +993,8 @@
       "checkedAt": "2026-11-09",
       "dataYear": "2026",
       "stale": false,
-      "auto": true
+      "auto": true,
+      "firstSeen": ""
     }
   ]
 }
