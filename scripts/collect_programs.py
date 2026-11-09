@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from collect_notices import KST, RobotsBlocked, clean, fetch, robots_allows
+from collect_notices import KST, RobotsBlocked, clean, fetch, robots_allows, with_deadline
 
 DATA = Path(__file__).resolve().parent.parent / 'data'
 OUT_BENEFITS = DATA / 'auto-benefits.json'
@@ -420,7 +420,7 @@ def main():
     for key, org, collect, kind in SOURCES:
         status = {'key': key, 'org': org, 'ok': True, 'kept': 0}
         try:
-            found = collect()
+            found = with_deadline(collect, 300)
             items = [i for i in found if not is_duplicate(i, manual[kind])]
             status['read'] = len(found)
         except Exception as err:  # 한 기관의 실패가 전체를 멈추지 않도록 지난 결과를 유지

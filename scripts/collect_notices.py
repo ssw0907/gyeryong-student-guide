@@ -10,6 +10,7 @@ import hashlib
 import json
 import re
 import sys
+import threading
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -22,6 +23,7 @@ OUTPUT = Path(__file__).resolve().parent.parent / 'data' / 'notices.json'
 KST = timezone(timedelta(hours=9))
 KEEP_DAYS = 180
 MAX_ITEMS = 500
+SOURCE_DEADLINE = 150  # 기관 하나에 쓸 수 있는 최대 시간(초)
 BOT_NAME = 'gyeryong-student-guide'
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; gyeryong-student-guide/1.0; '
                          '+https://github.com/ssw0907/gyeryong-student-guide)'}
@@ -344,6 +346,26 @@ def robots_allows(url, verify):
     return verdict == 'allow'
 
 
+def with_deadline(func, seconds):
+    """응답을 끝내지 않는 서버가 전체 작업을 멈추지 않도록 시간 제한을 둔다. 넘기면 TimeoutError."""
+    result = {}
+
+    def run():
+        try:
+            result['value'] = func()
+        except Exception as err:
+            result['error'] = err
+
+    worker = threading.Thread(target=run, daemon=True)
+    worker.start()
+    worker.join(seconds)
+    if worker.is_alive():
+        raise TimeoutError('%d초 안에 끝나지 않음' % seconds)
+    if 'error' in result:
+        raise result['error']
+    return result['value']
+
+
 def collect_source(src):
     """인증서가 불완전한 기관이 있어, 검증 실패 때만 검증 없이 다시 읽는다 (공개 목록 읽기 전용).
     접속 시간 초과는 한 번 더 시도한다."""
@@ -383,7 +405,7 @@ def main():
         status = {'key': src['key'], 'org': src['org'], 'region': src['region'], 'url': src['url'],
                   'ok': True, 'read': 0, 'kept': 0}
         try:
-            items = collect_source(src)
+            items = with_deadline(lambda: collect_source(src), SOURCE_DEADLINE)
             status['read'] = len(items)
             if not items:
                 raise ValueError('목록에서 공고를 찾지 못함 (게시판 구조 변경 가능)')
