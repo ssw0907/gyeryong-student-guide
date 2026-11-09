@@ -68,7 +68,11 @@ GOV24_CONDITION_TARGET = re.compile(
     r'가정위탁|위탁\s*가정|위탁\s*아동|보호대상\s*아동|보호\s*아동|아동복지시설|공동생활가정|'
     r'등록\S{0,3}\s*장애|장애인복지법|장애\s*(?:아동|학생|청소년|선수)|특수교육대상|'
     r'다문화|이주배경|북한\s*이탈|북향민|탈북|보훈|국가유공자|독립유공자|'
-    r'학대\s*피해|성폭력|성매매|범죄\s*피해|피해자')
+    r'학대\s*피해|성폭력|성매매|범죄\s*피해|피해자|'
+    r'(?<!및 )학교\s*밖|가정\s*밖|청소년쉼터|고립\S{0,2}\s*은둔|교육적\s*선도|소년원|보호관찰|정서\S{0,2}\s*행동적\s*문제|'
+    r'\d+세\s*이하\s*산모|실종\s*아동|새마을지도자')
+# 지원 대상 글에 조건이 드러나지 않아 이름으로 지정해 빼는 서비스
+GOV24_EXCLUDED_SERVICES = {'학교 밖 청소년 지원센터 운영'}
 GOV24_OPEN_TO_ALL = re.compile(r'다자녀|희망자|우선\s*대상자\s*고려')
 
 TODAY = datetime.now(KST).date()
@@ -330,6 +334,7 @@ def gov24_unrelated(row):
     name = row.get('서비스명') or ''
     target = row.get('지원대상') or ''
     return (row.get('서비스분야') in GOV24_UNRELATED_FIELD
+            or name.strip() in GOV24_EXCLUDED_SERVICES
             or bool(GOV24_UNRELATED_NAME.search(name))
             or bool(GOV24_CONDITION_TARGET.search(target) and not GOV24_OPEN_TO_ALL.search(target))
             or bool(GOV24_UNRELATED_TARGET.search(target) and not GOV24_SCHOOL_TARGET.search(name + ' ' + target)))
@@ -430,6 +435,23 @@ SOURCES = [
 ]
 
 
+# 이 값이 달라지면 내용이 바뀐 카드로 본다 (수집일처럼 매일 바뀌는 값은 넣지 않음)
+CHANGE_FIELDS = ('name', 'target', 'content', 'schedule', 'place', 'applyMethod', 'applyStart', 'applyEnd', 'applyNote',
+                 'cost', 'capacity', 'eventStart', 'eventEnd', 'url')
+
+
+def stamp_dates(item, previous):
+    """firstSeen: 처음 수집한 날, changedOn: 내용이 마지막으로 바뀐 날.
+    firstSeen이 없던 때부터 있던 카드는 빈 값으로 두어 새 항목으로 보이지 않게 한다."""
+    old = previous.get(item['id'])
+    if old is None:
+        item['firstSeen'], item['changedOn'] = TODAY.isoformat(), ''
+        return
+    item['firstSeen'] = old.get('firstSeen', '')
+    changed = any(item.get(k, '') != old.get(k, '') for k in CHANGE_FIELDS)
+    item['changedOn'] = TODAY.isoformat() if changed else old.get('changedOn', '')
+
+
 def load(path, key):
     if not path.exists():
         return {}
@@ -466,8 +488,7 @@ def main():
         for item in result[kind]['items']:
             if item['id'] not in seen:
                 seen.add(item['id'])
-                # 처음 수집한 날. 이 값이 없던 때부터 있던 카드는 빈 값으로 두어 새 항목으로 보이지 않게 한다.
-                item['firstSeen'] = previous[item['id']].get('firstSeen', '') if item['id'] in previous else TODAY.isoformat()
+                stamp_dates(item, previous)
                 unique.append(item)
         path.write_text(json.dumps({'updatedAt': TODAY.isoformat(), 'sources': result[kind]['sources'], kind: unique},
                                    ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
