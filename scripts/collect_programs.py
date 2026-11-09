@@ -54,6 +54,13 @@ GOV24_URL = 'https://api.odcloud.kr/api/gov24/v3/serviceList'
 GOV24_LOCAL = re.compile(r'계룡|^충청남도교육청|^충남교육청')           # 학생 대상이 아니어도 모두 넣는 기관
 GOV24_STUDENT = re.compile(r'초등|중학|학생|청소년|아동|어린이|자녀|입학|교복|장학|학교|수학여행|교육비')
 GOV24_NOT_STUDENT = re.compile(r'대학생|대학원생|유학생')
+# 초·중학생과 학부모에게 무관한 혜택: 농업, 노인, 청년·대학생, 유아, 시설·사업자 대상. 애매하면 남긴다.
+GOV24_UNRELATED_FIELD = {'농림축산어업'}
+GOV24_UNRELATED_NAME = re.compile(
+    r'노인|어르신|장수|고령|귀농|농가|청년|대학|국가장학금|국가근로장학금|인문100|희망사다리|예술체육비전|지역인재장학|'
+    r'글로벌 현장학습|약제비|정신질환|상품권|유공자|6·25|어린이집|유치원|유아교육|시설\s*운영|기능보강|급식관리|전통주|지킴이')
+GOV24_UNRELATED_TARGET = re.compile(r'대학(?!부설)|(?:60|65|70|80)세\s*이상|18세\s*[~～]\s*39세')
+GOV24_SCHOOL_TARGET = re.compile(r'초등|중학|고등학|초\s*[·,]\s*중|한부모|자녀|아동|청소년')
 
 TODAY = datetime.now(KST).date()
 
@@ -310,8 +317,18 @@ def shorten(text, limit=120):
     return text if len(text) <= limit else text[:limit].rstrip() + '…'
 
 
+def gov24_unrelated(row):
+    name = row.get('서비스명') or ''
+    target = row.get('지원대상') or ''
+    return (row.get('서비스분야') in GOV24_UNRELATED_FIELD
+            or bool(GOV24_UNRELATED_NAME.search(name))
+            or bool(GOV24_UNRELATED_TARGET.search(target) and not GOV24_SCHOOL_TARGET.search(name + ' ' + target)))
+
+
 def gov24_wanted(row):
     org = row.get('소관기관명') or ''
+    if gov24_unrelated(row):
+        return False
     if GOV24_LOCAL.search(org):
         return True
     if org != '충청남도' and row.get('소관기관유형') != '중앙행정기관':
