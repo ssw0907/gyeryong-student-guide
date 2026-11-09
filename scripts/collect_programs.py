@@ -60,7 +60,12 @@ GOV24_UNRELATED_NAME = re.compile(
     r'노인|어르신|장수|고령|귀농|농가|청년|대학|국가장학금|국가근로장학금|인문100|희망사다리|예술체육비전|지역인재장학|'
     r'글로벌 현장학습|약제비|정신질환|상품권|유공자|6·25|어린이집|유치원|유아교육|시설\s*운영|기능보강|급식관리|전통주|지킴이')
 GOV24_UNRELATED_TARGET = re.compile(r'대학(?!부설)|(?:60|65|70|80)세\s*이상|18세\s*[~～]\s*39세')
-GOV24_SCHOOL_TARGET = re.compile(r'초등|중학|고등학|초\s*[·,]\s*중|한부모|자녀|아동|청소년')
+GOV24_SCHOOL_TARGET = re.compile(r'초등|중학|고등학|초\s*[·,]\s*중|자녀|아동|청소년')
+# 한부모·입양·저소득이 조건인 혜택. 일반 가정도 받을 수 있으면(GOV24_OPEN_TO_ALL) 남긴다.
+GOV24_CONDITION_NAME = re.compile(r'한부모|입양|저소득|차상위|기초생활|취약계층')
+GOV24_CONDITION_TARGET = re.compile(
+    r'한부모|입양(?!으로)|저소득|차상위|기초생활|기초수급|수급자|수급가구|교육급여|중위소득\s*\d{1,2}\s*[%~]')
+GOV24_OPEN_TO_ALL = re.compile(r'다자녀|희망자|우선\s*대상자\s*고려')
 
 TODAY = datetime.now(KST).date()
 
@@ -322,6 +327,8 @@ def gov24_unrelated(row):
     target = row.get('지원대상') or ''
     return (row.get('서비스분야') in GOV24_UNRELATED_FIELD
             or bool(GOV24_UNRELATED_NAME.search(name))
+            or bool(GOV24_CONDITION_NAME.search(name))
+            or bool(GOV24_CONDITION_TARGET.search(target) and not GOV24_OPEN_TO_ALL.search(target))
             or bool(GOV24_UNRELATED_TARGET.search(target) and not GOV24_SCHOOL_TARGET.search(name + ' ' + target)))
 
 
