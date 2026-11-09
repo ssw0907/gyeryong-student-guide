@@ -394,10 +394,10 @@
     el['n-meta'].hidden = !noticeInfo;
     if (!noticeInfo) return;
     el['n-meta'].appendChild(make('p', '', '"공고" 카드는 기관 게시판에서 매일 자동으로 모은 것입니다. 제목만 보고 고르므로 관련 없는 공고가 섞이거나 빠질 수 있으니, 자세한 내용은 공식 링크에서 확인하세요. 마지막 수집 ' + formatDate(noticeInfo.updatedAt)));
-    if (state.tab !== 'benefits') return; // 읽지 못한 기관은 모두 충남·계룡 기관
+    var region = state.tab === 'events' ? '대전' : '충남·계룡';
     var seen = {};
     var missed = (noticeInfo.sources || []).filter(function (s) {
-      if (s.ok || seen[s.org]) return false;
+      if (s.ok || s.region !== region || seen[s.org]) return false;
       seen[s.org] = true;
       return /^https?:\/\//.test(String(s.url));
     });

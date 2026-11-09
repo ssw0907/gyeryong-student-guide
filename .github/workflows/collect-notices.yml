@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 jobs:
   collect:
@@ -26,8 +25,6 @@ jobs:
         run: python scripts/collect_programs.py
         continue-on-error: true
       - name: 변경 내용 저장
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           git add data/notices.json data/auto-benefits.json data/auto-events.json
           if git diff --cached --quiet; then
@@ -38,5 +35,3 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "자동 수집 $(TZ=Asia/Seoul date +%F)"
           git push
-          # 워크플로의 푸시는 Pages 배포를 자동으로 시작하지 않을 수 있어 직접 요청함
-          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
