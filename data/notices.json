@@ -290,9 +290,10 @@
       "org": "KAIST",
       "region": "대전",
       "url": "https://www.kaist.ac.kr/kr/html/footer/0823.html",
-      "ok": true,
-      "read": 15,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.kaist.ac.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.kaist.ac.kr', port=443) at 0x77c618b37550>, "
     },
     {
       "key": "daejeon",
