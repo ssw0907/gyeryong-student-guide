@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-12",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -55,7 +55,7 @@
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
       "ok": true,
       "read": 10,
-      "kept": 6
+      "kept": 7
     },
     {
       "key": "chungnam-notice",
@@ -137,8 +137,8 @@
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/lecture/lectureList.do?searchTab=ING&targetCd=E",
       "ok": true,
-      "read": 4,
-      "kept": 4
+      "read": 3,
+      "kept": 3
     },
     {
       "key": "cnall-notice",
@@ -238,7 +238,7 @@
       "url": "https://dsecc.djsch.kr/djsecc/main.do",
       "ok": true,
       "read": 10,
-      "kept": 7
+      "kept": 6
     },
     {
       "key": "seogu-notice",
@@ -292,7 +292,7 @@
       "url": "https://www.kaist.ac.kr/kr/html/footer/0823.html",
       "ok": true,
       "read": 15,
-      "kept": 0
+      "kept": 1
     },
     {
       "key": "daejeon",
@@ -340,6 +340,83 @@
     }
   ],
   "notices": [
+    {
+      "id": "gryouth-star-1840238007d5",
+      "title": "2026년 교육문화 프로그램 별별 요거트",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-12",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "icec-abda39a5ff9f",
+      "title": "[“첨단기술 체험부터 대학 멘토링까지” 서산 고교생 진로·진학 역량 키운다]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-11",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=750",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "gryouth-star-52bc54835ce6",
+      "title": "'별난 자동차 메이커스' 청소년 모집",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-11",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "cnall-middle-ffbbde5f2217",
+      "title": "[서천지역 작가 강연] 구재기 시인과의 만남",
+      "org": "서천도서관 (서천)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-11",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38807",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "chungnam-gosi-4df66f9efad1",
+      "title": "충청남도자치경찰위원회 교통안전 콘텐츠 공모전",
+      "org": "충청남도청",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-11",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2185899&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-12&edate=2026-11-12",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "chsl-f26f0a668dcb",
+      "title": "문헌정보관(도서관) 단축 운영 및 화장실 이용 안내(11.23.~26.)",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-11",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=780795",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "kaist-fb815709a6ce",
+      "title": "[모집공고] 2026겨울학기 학부생 연구체험 프로그램",
+      "org": "KAIST",
+      "region": "대전",
+      "scope": "",
+      "date": "2026-11-10",
+      "url": "https://www.kaist.ac.kr/kr/html/footer/0823.html?mode=V&no=284b973a90b6144b0854d972b9f82fa8&GotoPage=1",
+      "firstSeen": "2026-11-12",
+      "grades": []
+    },
     {
       "id": "seogu-exp-a17528f71bc1",
       "title": "우리는 가족농부(11.14)",
@@ -1165,11 +1242,11 @@
       "title": "2027학년도 충청남도논산계룡교육지원청영재교육원 선발 전형요강 안내",
       "org": "충청남도논산계룡교육지원청",
       "region": "충남·계룡",
+      "scope": "계룡시",
       "date": "2026-10-02",
       "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283109",
       "firstSeen": "2026-11-03",
-      "grades": [],
-      "scope": "계룡시"
+      "grades": []
     },
     {
       "id": "cle-7e7f4292d28b",
