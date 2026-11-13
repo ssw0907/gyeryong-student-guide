@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "sources": [
     {
       "key": "science",
@@ -40,7 +40,7 @@
       "org": "국립중앙과학관",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttDetail.do?nttSn=50310",
       "source": "국립중앙과학관 (자동 수집)",
-      "checkedAt": "2026-11-13",
+      "checkedAt": "2026-11-14",
       "residency": "제한 문구 없음(목록 기준, 신청 전 확인)",
       "auto": true,
       "firstSeen": "",
