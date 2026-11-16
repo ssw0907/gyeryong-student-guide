@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-17",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -55,7 +55,7 @@
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
       "ok": true,
       "read": 10,
-      "kept": 7
+      "kept": 6
     },
     {
       "key": "chungnam-notice",
@@ -110,8 +110,8 @@
       "region": "충남·계룡",
       "url": "http://cle.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003",
       "ok": true,
-      "read": 16,
-      "kept": 8
+      "read": 14,
+      "kept": 10
     },
     {
       "key": "cnbl",
@@ -210,7 +210,7 @@
       "region": "충남·계룡",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
       "ok": true,
-      "read": 13,
+      "read": 12,
       "kept": 5
     },
     {
@@ -255,8 +255,8 @@
       "region": "대전",
       "url": "https://www.seogu.go.kr/prog/exprnLnbns/yeyak/sub03_01/list.do",
       "ok": true,
-      "read": 4,
-      "kept": 1
+      "read": 2,
+      "kept": 0
     },
     {
       "key": "kriss",
@@ -340,6 +340,101 @@
     }
   ],
   "notices": [
+    {
+      "id": "cnall-notice-fa6eb6d17948",
+      "title": "2026년 학부모 특강 새내기 학부모, 첫걸음",
+      "org": "충남평생교육정보시스템",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-16",
+      "url": "https://www.cnall.or.kr/bbs/101/bbsPostList.do",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
+    {
+      "id": "cnall-elementary-baeedfe07f37",
+      "title": "[2026년 11월 문화가 있는 날] 오주영 작가와의 만남-빨간 여우의 북극 바캉스",
+      "org": "서부평생교육원 (서산)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-16",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38858",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
+    {
+      "id": "chungnam-gosi-d98989b57a74",
+      "title": "2026 힐링충남 관광 정책 아이디어 공모전",
+      "org": "충청남도청",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-16",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186121&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-17&edate=2026-11-17",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
+    {
+      "id": "icec-b23f16a90896",
+      "title": "[충청남도교육청진로융합교육원…전국 최초 진로·진학·융합·미래교육 통합기관]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-14",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=752",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
+    {
+      "id": "dsecc-b3161e7f370c",
+      "title": "[모집] (미디어 특강) 11월 (AI 활용) 뉴스 체험 특강 안내",
+      "org": "대전학생교육문화원",
+      "region": "대전",
+      "scope": "",
+      "date": "2026-11-13",
+      "url": "https://dsecc.djsch.kr/djsecc/na/ntt/selectNttInfo.do?nttSn=9065&mi=1154&currPage=1&listCo=10",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
+    {
+      "id": "cnnse-199-74496cfac1b3",
+      "title": "2027학년도 초등학교 의무취학통지 제도 안내",
+      "org": "충청남도논산계룡교육지원청",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-13",
+      "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283500",
+      "firstSeen": "2026-11-17",
+      "grades": [
+        "초1",
+        "초2",
+        "초3",
+        "초4",
+        "초5",
+        "초6"
+      ]
+    },
+    {
+      "id": "cnnse-199-411e1f193c9c",
+      "title": "[공고] (긴급) 논산계룡교육지원청 교육청사 내진보강공법 제안 공고",
+      "org": "충청남도논산계룡교육지원청",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-13",
+      "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283501",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
+    {
+      "id": "cle-f76fcf19bffc",
+      "title": "대학수학능력시험에 따른 11월 19일 자료실 운영시간 조정 안내",
+      "org": "충청남도교육청평생교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-13",
+      "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=781048",
+      "firstSeen": "2026-11-17",
+      "grades": []
+    },
     {
       "id": "gryouth-star-1840238007d5",
       "title": "2026년 교육문화 프로그램 별별 요거트",
@@ -1104,7 +1199,7 @@
       "region": "대전",
       "scope": "",
       "date": "2026-10-12",
-      "url": "https://www.kaeri.re.kr/board/view?pageNum=1&rowCnt=10&no1=109&linkId=13142&menuId=MENU00332&schType=0&schText=&boardStyle=&categoryId=&continent=&country=&schYear=",
+      "url": "https://www.kaeri.re.kr/board/view?pageNum=1&rowCnt=10&no1=108&linkId=13142&menuId=MENU00332&schType=0&schText=&boardStyle=&categoryId=&continent=&country=&schYear=",
       "firstSeen": "2026-11-09",
       "grades": []
     },
@@ -1357,6 +1452,23 @@
       "url": "http://cle.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000000181&bbsId=BBSMSTR_000000000003&nttNo=752832",
       "firstSeen": "2026-11-09",
       "grades": []
+    },
+    {
+      "id": "cnall-elementary-ecb027e1c8ca",
+      "title": "[대면][초등 2~6학년] 상상이룸 교육 3기(디지털 기기 활용 : 나만의 스마트 화분 만들기)",
+      "org": "남부평생교육원 (논산계룡)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-09-17",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38482",
+      "firstSeen": "2026-11-17",
+      "grades": [
+        "초2",
+        "초3",
+        "초4",
+        "초5",
+        "초6"
+      ]
     },
     {
       "id": "dsecc-47b763a5ea54",
