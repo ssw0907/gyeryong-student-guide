@@ -201,6 +201,28 @@ def parse_science(src):
     return items
 
 
+def parse_main_recent(src):
+    """게시판은 robots.txt가 막고 첫 화면만 허용하는 충남교육청 직속기관 누리집.
+    첫 화면의 최근 글 목록(ul.board-recent)과 사진 목록(gallery_slider)에서 제목·날짜·링크를 읽는다."""
+    items, seen = [], set()
+    page = soup(src['url'], src['verify'])
+    links = [(li.select_one('a.ajax'), li) for li in page.select('ul.board-recent li')]
+    links += [(a, a) for a in page.select('[id^=gallery_slider] a.ajax')]
+    for a, box in links:
+        if not a or not a.get('href') or a.select_one('.contents'):
+            continue
+        title_tag = a.select_one('.gallery-title')
+        text = clean((title_tag or a).get_text(' '))
+        title = strip_marks(clean(DATE_RE.sub('', text, count=1)) if not title_tag else text)
+        title = re.sub(r'^(\[공지\]\s*)+', '', title).strip()
+        if len(title) < 4 or title in seen:
+            continue
+        seen.add(title)
+        items.append({'title': title, 'date': find_date(clean(box.get_text(' '))),
+                      'url': urljoin(src['url'], a['href'])})
+    return items
+
+
 CNE_BBS = 'cop/bbs/selectBoardList.do?'
 GYERYONG = {'region': '충남·계룡', 'scope': '계룡시'}
 CHUNGNAM = {'region': '충남·계룡', 'scope': '충남 전체'}
@@ -241,14 +263,15 @@ SOURCES = [
          url='https://www.cnall.or.kr/lecture/lectureList.do?searchTab=ING&targetCd=E'),
     dict(CHUNGNAM, key='cnall-notice', org='충남평생교육정보시스템', filter='loose', parser=parse_table,
          url='https://www.cnall.or.kr/bbs/101/bbsPostList.do'),
-    dict(CHUNGNAM, key='cnse', org='충청남도교육청과학교육원', filter='loose', parser=None,
-         url='https://www.cnse.or.kr/main/board/list.action?q=d636ce2d19a523b2924c63232c3cae51ff9282aeab77ec41cdfaf1fdd875101a'),
-    dict(CHUNGNAM, key='cnstc', org='충청남도교육청안전수련원', filter='loose', parser=None,
-         url='https://www.cnstc.or.kr/', check='https://www.cnstc.or.kr/main/board/list.action'),
-    dict(CHUNGNAM, key='cnis', org='충청남도교육청해양수련원', filter='loose', parser=None,
-         url='https://www.cnis.go.kr/', check='https://www.cnis.go.kr/main/board/list.action'),
-    dict(CHUNGNAM, key='chungmoo', org='충무교육원', filter='loose', parser=None,
-         url='https://www.chungmoo-ei.or.kr/', check='https://www.chungmoo-ei.or.kr/main/board/list.action'),
+    # 아래 4곳은 게시판을 막고 첫 화면만 허용하므로 첫 화면의 최근 글만 읽는다
+    dict(CHUNGNAM, key='cnse', org='충청남도교육청과학교육원', filter='loose', parser=parse_main_recent,
+         url='https://www.cnse.or.kr/main/main.action'),
+    dict(CHUNGNAM, key='cnstc', org='충청남도교육청안전수련원', filter='loose', parser=parse_main_recent,
+         url='https://www.cnstc.or.kr/main/index.action'),
+    dict(CHUNGNAM, key='cnis', org='충청남도교육청해양수련원', filter='loose', parser=parse_main_recent,
+         url='https://www.cnis.go.kr/index.action'),
+    dict(CHUNGNAM, key='chungmoo', org='충무교육원', filter='loose', parser=parse_main_recent,
+         url='https://www.chungmoo-ei.or.kr/main/main.action'),
     dict(CHUNGNAM, key='clehrd', org='충남평생교육진흥원', filter='loose', parser=None,
          url='https://www.clehrd.or.kr/', check='https://www.clehrd.or.kr/bbs/list.do'),
     dict(CHUNGNAM, key='pass-activity', org='충청남도청소년활동진흥센터', filter='loose', parser=parse_es_board,
