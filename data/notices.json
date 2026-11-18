@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-19",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -44,18 +44,20 @@
       "org": "충청남도논산계룡교육지원청",
       "region": "충남·계룡",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
-      "ok": true,
-      "read": 10,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71365c3cced0>, "
     },
     {
       "key": "cnnse-199",
       "org": "충청남도논산계룡교육지원청",
       "region": "충남·계룡",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
-      "ok": true,
-      "read": 10,
-      "kept": 7
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71365c3d9690>, "
     },
     {
       "key": "chungnam-notice",
@@ -127,27 +129,30 @@
       "org": "충남평생교육정보시스템",
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/lecture/lectureList.do?searchTab=ING&targetCd=D",
-      "ok": true,
-      "read": 20,
-      "kept": 19
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71365c054ad0>, "
     },
     {
       "key": "cnall-middle",
       "org": "충남평생교육정보시스템",
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/lecture/lectureList.do?searchTab=ING&targetCd=E",
-      "ok": true,
-      "read": 3,
-      "kept": 3
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71365c0788d0>, "
     },
     {
       "key": "cnall-notice",
       "org": "충남평생교육정보시스템",
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/bbs/101/bbsPostList.do",
-      "ok": true,
-      "read": 20,
-      "kept": 18
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71365c0566d0>, "
     },
     {
       "key": "cnse",
@@ -157,25 +162,27 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.cnse.or.kr/main/main.action"
+      "error": "TimeoutError: 34초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
       "org": "충청남도교육청안전수련원",
       "region": "충남·계룡",
       "url": "https://www.cnstc.or.kr/main/index.action",
-      "ok": true,
-      "read": 14,
-      "kept": 3
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "cnis",
       "org": "충청남도교육청해양수련원",
       "region": "충남·계룡",
       "url": "https://www.cnis.go.kr/index.action",
-      "ok": true,
-      "read": 26,
-      "kept": 13
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "chungmoo",
@@ -185,7 +192,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.chungmoo-ei.or.kr/main/main.action"
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "clehrd",
@@ -195,98 +202,107 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "pass-activity",
       "org": "충청남도청소년활동진흥센터",
       "region": "충남·계룡",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
-      "ok": true,
-      "read": 12,
-      "kept": 5
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "pass-counsel",
       "org": "충청남도청소년상담복지센터",
       "region": "충남·계룡",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038",
-      "ok": true,
-      "read": 10,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "science",
       "org": "국립중앙과학관",
       "region": "대전",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttList.do",
-      "ok": true,
-      "read": 12,
-      "kept": 12
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "dsecc",
       "org": "대전학생교육문화원",
       "region": "대전",
       "url": "https://dsecc.djsch.kr/djsecc/main.do",
-      "ok": true,
-      "read": 10,
-      "kept": 6
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "seogu-notice",
       "org": "대전 서구청",
       "region": "대전",
       "url": "https://www.seogu.go.kr/bbs/BBSMSTR_000000000238/list.do",
-      "ok": true,
-      "read": 20,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "seogu-exp",
       "org": "대전 서구청",
       "region": "대전",
       "url": "https://www.seogu.go.kr/prog/exprnLnbns/yeyak/sub03_01/list.do",
-      "ok": true,
-      "read": 3,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "kriss",
       "org": "한국표준과학연구원",
       "region": "대전",
       "url": "https://www.kriss.re.kr/board.es?mid=a10503000000&bid=0002",
-      "ok": true,
-      "read": 12,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "kaeri",
       "org": "한국원자력연구원",
       "region": "대전",
       "url": "https://www.kaeri.re.kr/board?menuId=MENU00332",
-      "ok": true,
-      "read": 10,
-      "kept": 1
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "kribb",
       "org": "한국생명공학연구원",
       "region": "대전",
       "url": "https://www.kribb.re.kr/kor/sub03/sub03_01_01.jsp",
-      "ok": true,
-      "read": 10,
-      "kept": 0
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "kaist",
       "org": "KAIST",
       "region": "대전",
       "url": "https://www.kaist.ac.kr/kr/html/footer/0823.html",
-      "ok": true,
-      "read": 15,
-      "kept": 1
+      "ok": false,
+      "read": 0,
+      "kept": 0,
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "daejeon",
@@ -296,8 +312,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "dje",
@@ -307,8 +322,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "desre",
@@ -318,8 +332,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     },
     {
       "key": "ulibrary",
@@ -329,8 +342,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
     }
   ],
   "notices": [
