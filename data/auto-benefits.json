@@ -11,9 +11,9 @@
     {
       "key": "cnall",
       "org": "충남평생교육 강좌 신청",
-      "ok": false,
+      "ok": true,
       "kept": 1,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x712455ed1990>, "
+      "read": 1
     },
     {
       "key": "gov24",
@@ -117,7 +117,7 @@
       "applyUnit": "개인",
       "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38858",
       "source": "충청남도교육청서부평생교육원 (충남평생교육 강좌 신청)",
-      "checkedAt": "2026-11-17",
+      "checkedAt": "2026-11-18",
       "dataYear": "2026",
       "stale": false,
       "auto": true,

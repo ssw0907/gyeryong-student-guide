@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17",
+  "updatedAt": "2026-11-18",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -55,7 +55,7 @@
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
       "ok": true,
       "read": 10,
-      "kept": 6
+      "kept": 7
     },
     {
       "key": "chungnam-notice",
@@ -73,7 +73,7 @@
       "url": "https://www.chungnam.go.kr/cnportal/province/province/list.do?menuNo=500487",
       "ok": true,
       "read": 10,
-      "kept": 1
+      "kept": 0
     },
     {
       "key": "cne",
@@ -101,8 +101,8 @@
       "region": "충남·계룡",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121",
       "ok": true,
-      "read": 26,
-      "kept": 13
+      "read": 27,
+      "kept": 15
     },
     {
       "key": "cle",
@@ -153,45 +153,39 @@
       "key": "cnse",
       "org": "충청남도교육청과학교육원",
       "region": "충남·계룡",
-      "url": "https://www.cnse.or.kr/main/board/list.action?q=d636ce2d19a523b2924c63232c3cae51ff9282aeab77ec41cdfaf1fdd875101a",
+      "url": "https://www.cnse.or.kr/main/main.action",
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.cnse.or.kr/main/main.action"
     },
     {
       "key": "cnstc",
       "org": "충청남도교육청안전수련원",
       "region": "충남·계룡",
-      "url": "https://www.cnstc.or.kr/",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "url": "https://www.cnstc.or.kr/main/index.action",
+      "ok": true,
+      "read": 14,
+      "kept": 3
     },
     {
       "key": "cnis",
       "org": "충청남도교육청해양수련원",
       "region": "충남·계룡",
-      "url": "https://www.cnis.go.kr/",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "url": "https://www.cnis.go.kr/index.action",
+      "ok": true,
+      "read": 26,
+      "kept": 13
     },
     {
       "key": "chungmoo",
       "org": "충무교육원",
       "region": "충남·계룡",
-      "url": "https://www.chungmoo-ei.or.kr/",
+      "url": "https://www.chungmoo-ei.or.kr/main/main.action",
       "ok": false,
       "read": 0,
       "kept": 0,
-      "blocked": true,
-      "error": "robots.txt가 자동 수집을 허용하지 않음"
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.chungmoo-ei.or.kr/main/main.action"
     },
     {
       "key": "clehrd",
@@ -255,7 +249,7 @@
       "region": "대전",
       "url": "https://www.seogu.go.kr/prog/exprnLnbns/yeyak/sub03_01/list.do",
       "ok": true,
-      "read": 2,
+      "read": 3,
       "kept": 0
     },
     {
@@ -340,6 +334,28 @@
     }
   ],
   "notices": [
+    {
+      "id": "chsl-1acadc79f9da",
+      "title": "2026년 희망도서 신청 마감 안내",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-18",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=782085",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-ee2e47475392",
+      "title": "2026년 하반기 찾아가는 안전캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-16",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d36eac984a1c730cffab6e42ac5d6e5604fbdfc4eb52932d716742386f816de05",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
     {
       "id": "cnall-notice-fa6eb6d17948",
       "title": "2026년 학부모 특강 새내기 학부모, 첫걸음",
@@ -455,6 +471,17 @@
       "date": "2026-11-11",
       "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=750",
       "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "gryouth-star-e805be316f82",
+      "title": "[대기자 모집중] '별난 자동차 메이커스' 청소년 모집",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-11",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-18",
       "grades": []
     },
     {
@@ -598,6 +625,127 @@
       "date": "2026-11-06",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039&act=view&list_no=3684&tag=&nPage=1",
       "firstSeen": "2026-11-06",
+      "grades": []
+    },
+    {
+      "id": "cnis-fc2bd236f778",
+      "title": "2026년 찾아가가는 안전캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d67ccbeebb54810dccab2900706a4c3d945b54bd359b1950ebf47f5ffa587e14d",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-f8c79953e4cd",
+      "title": "2026년 이주배경학생가족 해양캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d32baba4211733b59bf1b4970cbbed87c24c0fe249ba9ac6077a36247c5891d50",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-efe2b8c3afb6",
+      "title": "2026년 학생 해양캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d4eaac1b3ea3246103116bd13b42a7048337e32cee01a8ab698436934923ac85f",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-eb4c6eec9519",
+      "title": "2026년 한마음 교육가족 숲속캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d8be4ae867ce35a939d3f2ce7536c203d69cd93db35f633db51acfc6fdc66e2e1",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-ce6f9d76e34d",
+      "title": "2026년 학교 밖 청소년 캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385dfb031d5cbec376c438ada9694964376a076bc59469baa5f3580e721a01ce2dd4",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-9798a43a1c3c",
+      "title": "2026년 바다로 한걸음 인공암벽 등반캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d60f2687a990e2217cedf4c990942b8442eb0a4e9c79669420d53ad1357a14d74",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-5159b6b438cf",
+      "title": "2026년 한마음 교육가족 해양캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d6dbb63a1ce68d2ee1b8b8072379bc42c800e03cf1cc3159c66e0d20c8614bf1f",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-3c8b16e3ec6b",
+      "title": "2026년 융합도전캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d3fd57c12fe9e6516580ade0c761d95f3a0a0af96be2a5703307f5500567f5867",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-39a93e998fcf",
+      "title": "2026년 특수학교 해양캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385ddc9099b96294e232d8d1d680527cf1d12bbf804cb1e59182513396329103379e",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-2ccbc19fd96d",
+      "title": "2026년 이주배경학생가족 숲속캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385dd95dfcb12162310e8c0cd33d8695ce9099b9117f791f21edfa228cfeae49b942",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
+      "id": "cnis-2110d3e0daed",
+      "title": "2026년 학생 숲속캠프",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-05",
+      "url": "https://www.cnis.go.kr/board/read.action?q=79d95d851ba642c7cdc96b5796d43a33a15918bd9a9957305ad883502779385d1a83b87e7847c2bdde3da8c47253250a36bb033b56bd6006a79c2620e5eeaf8a",
+      "firstSeen": "2026-11-18",
       "grades": []
     },
     {
@@ -1289,6 +1437,17 @@
       "grades": []
     },
     {
+      "id": "cnis-6f5e9f959647",
+      "title": "2026년 지진안전주간 추진계획 안내",
+      "org": "충청남도교육청해양수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-10-07",
+      "url": "https://www.cnis.go.kr/board/read.action?q=c6d12e33ded9100f4151ff2b3bf3eb38688b5f67670dfa5586d082a9403e2959712ef147802623d64a79e8be74e5d3b7331ba9d1e772dd75537af5ac2210c8bc",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
       "id": "cnbl-4960c012cdf0",
       "title": "2026년 가을 문학기행 참가자 모집 안내",
       "org": "충청남도교육청남부평생교육원",
@@ -1559,6 +1718,17 @@
       "grades": []
     },
     {
+      "id": "cnstc-6aaa9a7aaf5e",
+      "title": "2026학년도 하반기 「온(ON)충남 안전교실」",
+      "org": "충청남도교육청안전수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-09-01",
+      "url": "https://www.cnstc.or.kr/main/board/read.action?q=a56254a512a8ed96a32b04f0d3874450f71c143ce5260d2ad0500d566276e2f5d303b9acf2d8f10ab6a5115f00447c42e3b387be9f3116066aaeadfbcc67bcf7",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
       "id": "chsl-49d26027c8b7",
       "title": "2026 학생연주단 정기연주회 협연자 모집 공고",
       "org": "충청남도교육청학생교육문화원",
@@ -1779,6 +1949,17 @@
       "grades": []
     },
     {
+      "id": "cnstc-eb5c5733f24b",
+      "title": "2026년 8월「온(ON) 충남 안전교실」운영 안내 (참가자 최종 확정)",
+      "org": "충청남도교육청안전수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-07-07",
+      "url": "https://www.cnstc.or.kr/main/board/read.action?q=8dfa4036c877bac36f333d4397c4f5bad5ce4bc59409853985801daa71dcc4455e429db6a9902972d36d876dba1e6339d8e4ca7cec222e058d5883b2bc037261",
+      "firstSeen": "2026-11-18",
+      "grades": []
+    },
+    {
       "id": "chsl-b308bea71531",
       "title": "2026 학생연주단 여름방학 집중 수업 가정통신문",
       "org": "충청남도교육청학생교육문화원",
@@ -1787,6 +1968,17 @@
       "date": "2026-06-27",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=699066",
       "firstSeen": "2026-11-09",
+      "grades": []
+    },
+    {
+      "id": "cnstc-a35e15e2606b",
+      "title": "2026년 8월 '온(ON)충남 안전교실' 참가 신청 안내",
+      "org": "충청남도교육청안전수련원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-06-22",
+      "url": "https://www.cnstc.or.kr/main/board/read.action?q=8dfa4036c877bac36f333d4397c4f5bad5ce4bc59409853985801daa71dcc445e9fe8854799f93f7328fb1ed68380a51af6797757f4b8cebba8d0fc18e01bb96",
+      "firstSeen": "2026-11-18",
       "grades": []
     },
     {
