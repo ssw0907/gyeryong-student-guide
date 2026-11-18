@@ -24,6 +24,9 @@ KST = timezone(timedelta(hours=9))
 KEEP_DAYS = 180
 MAX_ITEMS = 500
 SOURCE_DEADLINE = 150  # 기관 하나에 쓸 수 있는 최대 시간(초)
+# 전체 수집에 쓸 수 있는 시간(초). GitHub 작업 제한(12분)보다 짧게 두어, 접속이 느린 날에도
+# 남은 기관은 건너뛰고(지난 공고 유지) 그때까지 모은 결과를 저장한다.
+TOTAL_BUDGET = 540
 BOT_NAME = 'gyeryong-student-guide'
 HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; gyeryong-student-guide/1.0; '
                          '+https://github.com/ssw0907/gyeryong-student-guide)'}
@@ -422,13 +425,17 @@ def main():
 
     merged = dict(previous)
     statuses = []
+    started = time.monotonic()
     for src in SOURCES:
         if only and src['key'] not in only:
             continue
         status = {'key': src['key'], 'org': src['org'], 'region': src['region'], 'url': src['url'],
                   'ok': True, 'read': 0, 'kept': 0}
         try:
-            items = with_deadline(lambda: collect_source(src), SOURCE_DEADLINE)
+            left = TOTAL_BUDGET - (time.monotonic() - started)
+            if left < 20:
+                raise TimeoutError('전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)')
+            items = with_deadline(lambda: collect_source(src), min(SOURCE_DEADLINE, left))
             status['read'] = len(items)
             if not items:
                 raise ValueError('목록에서 공고를 찾지 못함 (게시판 구조 변경 가능)')
