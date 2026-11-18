@@ -13,7 +13,7 @@
       "org": "충남평생교육 강좌 신청",
       "ok": false,
       "kept": 1,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7aa19d7c9d10>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x712455ed1990>, "
     },
     {
       "key": "gov24",
@@ -36,7 +36,7 @@
         "초5",
         "초6"
       ],
-      "content": "자동 수집한 항목입니다. 자세한 조건은 공식 링크에서 확인하세요. 모집 인원 15/15명 (대기 0/10명).",
+      "content": "자동 수집한 항목입니다. 자세한 조건은 공식 링크에서 확인하세요. 모집 인원 14/15명 (대기 0/10명).",
       "schedule": "2026.11.28",
       "place": "별쿠킹",
       "applyMethod": "별마루센터 누리집 신청 (선착순)",
