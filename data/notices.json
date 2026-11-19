@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-20",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -47,7 +47,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71365c3cced0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71af16c07150>, "
     },
     {
       "key": "cnnse-199",
@@ -57,7 +57,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71365c3d9690>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71af16c1c750>, "
     },
     {
       "key": "chungnam-notice",
@@ -75,7 +75,7 @@
       "url": "https://www.chungnam.go.kr/cnportal/province/province/list.do?menuNo=500487",
       "ok": true,
       "read": 10,
-      "kept": 0
+      "kept": 1
     },
     {
       "key": "cne",
@@ -121,8 +121,8 @@
       "region": "충남·계룡",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139",
       "ok": true,
-      "read": 17,
-      "kept": 10
+      "read": 16,
+      "kept": 9
     },
     {
       "key": "cnall-elementary",
@@ -132,7 +132,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71365c054ad0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71af166bea50>, "
     },
     {
       "key": "cnall-middle",
@@ -142,7 +142,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71365c0788d0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71af166aa890>, "
     },
     {
       "key": "cnall-notice",
@@ -152,7 +152,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71365c0566d0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71af166bd410>, "
     },
     {
       "key": "cnse",
@@ -162,7 +162,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 34초 안에 끝나지 않음"
+      "error": "TimeoutError: 52초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
@@ -346,6 +346,28 @@
     }
   ],
   "notices": [
+    {
+      "id": "cnbl-9080719ac3bd",
+      "title": "인문학 강좌 &lt;처음 만나는 셰익스피어 4대 비극&gt; 수강생 모집",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-19",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=782370",
+      "firstSeen": "2026-11-20",
+      "grades": []
+    },
+    {
+      "id": "chungnam-gosi-a4342db08b61",
+      "title": "「2026년 제4회 충청남도 드론 영상 및 사진 공모전」 수상 후보작 공개검증 공고",
+      "org": "충청남도청",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-19",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186352&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-20&edate=2026-11-20",
+      "firstSeen": "2026-11-20",
+      "grades": []
+    },
     {
       "id": "chsl-1acadc79f9da",
       "title": "2026년 희망도서 신청 마감 안내",
