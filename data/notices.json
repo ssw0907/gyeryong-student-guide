@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20",
+  "updatedAt": "2026-11-21",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -47,7 +47,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71af16c07150>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7527124d33d0>, "
     },
     {
       "key": "cnnse-199",
@@ -57,7 +57,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71af16c1c750>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7527124e8b10>, "
     },
     {
       "key": "chungnam-notice",
@@ -75,7 +75,7 @@
       "url": "https://www.chungnam.go.kr/cnportal/province/province/list.do?menuNo=500487",
       "ok": true,
       "read": 10,
-      "kept": 1
+      "kept": 3
     },
     {
       "key": "cne",
@@ -103,8 +103,8 @@
       "region": "충남·계룡",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121",
       "ok": true,
-      "read": 27,
-      "kept": 15
+      "read": 24,
+      "kept": 12
     },
     {
       "key": "cle",
@@ -121,8 +121,8 @@
       "region": "충남·계룡",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139",
       "ok": true,
-      "read": 16,
-      "kept": 9
+      "read": 18,
+      "kept": 11
     },
     {
       "key": "cnall-elementary",
@@ -132,7 +132,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71af166bea50>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x752710e24f50>, "
     },
     {
       "key": "cnall-middle",
@@ -142,7 +142,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71af166aa890>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x752710e30d90>, "
     },
     {
       "key": "cnall-notice",
@@ -152,7 +152,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71af166bd410>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x752710e27150>, "
     },
     {
       "key": "cnse",
@@ -162,7 +162,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 52초 안에 끝나지 않음"
+      "error": "TimeoutError: 31초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
@@ -346,6 +346,50 @@
     }
   ],
   "notices": [
+    {
+      "id": "cnbl-1acadc79f9da",
+      "title": "2026년 희망도서 신청 마감 안내",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-20",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=782521",
+      "firstSeen": "2026-11-21",
+      "grades": []
+    },
+    {
+      "id": "chungnam-gosi-a9f0ac204ecb",
+      "title": "대둔산도립공원 탐방로 일부구간 통제 공고",
+      "org": "충청남도청",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-20",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186474&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-21&edate=2026-11-21",
+      "firstSeen": "2026-11-21",
+      "grades": []
+    },
+    {
+      "id": "chungnam-gosi-781248e2966c",
+      "title": "2026년 하반기 충남학 영상콘텐츠 공모전 공고(2차 변경)",
+      "org": "충청남도청",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-20",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186404&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-21&edate=2026-11-21",
+      "firstSeen": "2026-11-21",
+      "grades": []
+    },
+    {
+      "id": "cnbl-ec761ad43291",
+      "title": "인문학 강좌 <처음 만나는 셰익스피어 4대 비극> 수강생 모집",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-19",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=782370",
+      "firstSeen": "2026-11-21",
+      "grades": []
+    },
     {
       "id": "cnbl-9080719ac3bd",
       "title": "인문학 강좌 &lt;처음 만나는 셰익스피어 4대 비극&gt; 수강생 모집",
@@ -560,6 +604,17 @@
       "date": "2026-11-11",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=780795",
       "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "chsl-a9c2c456385a",
+      "title": "[재안내]문헌정보관(도서관) 단축 운영 연장 및 화장실 이용 안내(11.23.~27.)",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-11",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=780795",
+      "firstSeen": "2026-11-21",
       "grades": []
     },
     {
