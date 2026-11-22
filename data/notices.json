@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22",
+  "updatedAt": "2026-11-23",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -47,7 +47,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x780e57c5b0d0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71bbbf00b050>, "
     },
     {
       "key": "cnnse-199",
@@ -57,7 +57,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x780e57c70950>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71bbbf020950>, "
     },
     {
       "key": "chungnam-notice",
@@ -132,7 +132,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x780e577f72d0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71bbbd965050>, "
     },
     {
       "key": "cnall-middle",
@@ -142,7 +142,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x780e577eb2d0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71bbbd970e90>, "
     },
     {
       "key": "cnall-notice",
@@ -152,7 +152,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x780e577e1d10>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71bbbd959910>, "
     },
     {
       "key": "cnse",
@@ -162,7 +162,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 35초 안에 끝나지 않음"
+      "error": "TimeoutError: 30초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
@@ -375,7 +375,7 @@
       "region": "충남·계룡",
       "scope": "충남 전체",
       "date": "2026-11-20",
-      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186474&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-22&edate=2026-11-22",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186474&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-23&edate=2026-11-23",
       "firstSeen": "2026-11-21",
       "grades": []
     },
@@ -386,7 +386,7 @@
       "region": "충남·계룡",
       "scope": "충남 전체",
       "date": "2026-11-20",
-      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186404&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-22&edate=2026-11-22",
+      "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186404&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-23&edate=2026-11-23",
       "firstSeen": "2026-11-21",
       "grades": []
     },
