@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23",
+  "updatedAt": "2026-11-24",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -47,7 +47,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71bbbf00b050>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7609ab7d3ad0>, "
     },
     {
       "key": "cnnse-199",
@@ -57,7 +57,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x71bbbf020950>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7609ab7d7b50>, "
     },
     {
       "key": "chungnam-notice",
@@ -75,7 +75,7 @@
       "url": "https://www.chungnam.go.kr/cnportal/province/province/list.do?menuNo=500487",
       "ok": true,
       "read": 10,
-      "kept": 3
+      "kept": 0
     },
     {
       "key": "cne",
@@ -103,8 +103,8 @@
       "region": "충남·계룡",
       "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121",
       "ok": true,
-      "read": 24,
-      "kept": 12
+      "read": 25,
+      "kept": 13
     },
     {
       "key": "cle",
@@ -132,7 +132,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71bbbd965050>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7609aa09d210>, "
     },
     {
       "key": "cnall-middle",
@@ -142,7 +142,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71bbbd970e90>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7609ab549050>, "
     },
     {
       "key": "cnall-notice",
@@ -152,7 +152,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x71bbbd959910>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7609aa09ff10>, "
     },
     {
       "key": "cnse",
@@ -162,7 +162,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 30초 안에 끝나지 않음"
+      "error": "TimeoutError: 32초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
@@ -346,6 +346,32 @@
     }
   ],
   "notices": [
+    {
+      "id": "icec-5b44db35c981",
+      "title": "[충청남도교육청진로융합교육원, 중학교 3학년 대상 진로융합활동 심화프로그램 운영]",
+      "org": "충청남도교육청진로융합교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-23",
+      "url": "http://icec.cne.go.kr/home/board/brdDetail.do?menu_cd=000041&num=755",
+      "firstSeen": "2026-11-24",
+      "grades": [
+        "중1",
+        "중2",
+        "중3"
+      ]
+    },
+    {
+      "id": "chsl-9a31a983eea6",
+      "title": "2026 충청남도교육청 통합전자도서관 만족도 조사 실시 안내",
+      "org": "충청남도교육청학생교육문화원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-23",
+      "url": "https://chsl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001002&bbsId=BBSMSTR_000000000121&nttNo=783001",
+      "firstSeen": "2026-11-24",
+      "grades": []
+    },
     {
       "id": "icec-eb297393cba5",
       "title": "[충청남도교육청진로융합교육원, 「2027학년도 대입 면접 실전 대비 특강」운영]",
