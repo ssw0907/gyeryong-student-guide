@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24",
+  "updatedAt": "2026-11-25",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -47,7 +47,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7609ab7d3ad0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7821835af910>, "
     },
     {
       "key": "cnnse-199",
@@ -57,7 +57,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7609ab7d7b50>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7821835b39d0>, "
     },
     {
       "key": "chungnam-notice",
@@ -121,8 +121,8 @@
       "region": "충남·계룡",
       "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardList.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139",
       "ok": true,
-      "read": 18,
-      "kept": 11
+      "read": 20,
+      "kept": 15
     },
     {
       "key": "cnall-elementary",
@@ -132,7 +132,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7609aa09d210>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7821831fbb10>, "
     },
     {
       "key": "cnall-middle",
@@ -142,7 +142,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7609ab549050>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7821831fbad0>, "
     },
     {
       "key": "cnall-notice",
@@ -152,7 +152,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7609aa09ff10>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x782183040e10>, "
     },
     {
       "key": "cnse",
@@ -162,7 +162,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 32초 안에 끝나지 않음"
+      "error": "TimeoutError: 28초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
@@ -346,6 +346,28 @@
     }
   ],
   "notices": [
+    {
+      "id": "cnbl-9a31a983eea6",
+      "title": "2026 충청남도교육청 통합전자도서관 만족도 조사 실시 안내",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-24",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=783310",
+      "firstSeen": "2026-11-25",
+      "grades": []
+    },
+    {
+      "id": "cnbl-39075a135373",
+      "title": "2026년 상호대차 서비스 마감 안내(~11.30.)",
+      "org": "충청남도교육청남부평생교육원",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-24",
+      "url": "http://cnbl.cne.go.kr/cop/bbs/selectBoardArticle.do?menuId=MNU_0000000000001210&bbsId=BBSMSTR_000000000139&nttNo=783197",
+      "firstSeen": "2026-11-25",
+      "grades": []
+    },
     {
       "id": "icec-5b44db35c981",
       "title": "[충청남도교육청진로융합교육원, 중학교 3학년 대상 진로융합활동 심화프로그램 운영]",
@@ -608,6 +630,17 @@
       "date": "2026-11-11",
       "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
       "firstSeen": "2026-11-12",
+      "grades": []
+    },
+    {
+      "id": "gryouth-star-13e03d1aab8b",
+      "title": "[모집마감] '별난 자동차 메이커스' 청소년 모집",
+      "org": "계룡시청소년별마루센터",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-11",
+      "url": "https://www.gryouth.or.kr/prog/prgrm/star/sub03_01/list.do",
+      "firstSeen": "2026-11-25",
       "grades": []
     },
     {
