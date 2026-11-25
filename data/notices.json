@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25",
+  "updatedAt": "2026-11-26",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -44,20 +44,18 @@
       "org": "충청남도논산계룡교육지원청",
       "region": "충남·계룡",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000040",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7821835af910>, "
+      "ok": true,
+      "read": 10,
+      "kept": 0
     },
     {
       "key": "cnnse-199",
       "org": "충청남도논산계룡교육지원청",
       "region": "충남·계룡",
       "url": "https://www.cnnse.go.kr/home/board/brdList.do?menu_cd=000199",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7821835b39d0>, "
+      "ok": true,
+      "read": 10,
+      "kept": 8
     },
     {
       "key": "chungnam-notice",
@@ -129,30 +127,27 @@
       "org": "충남평생교육정보시스템",
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/lecture/lectureList.do?searchTab=ING&targetCd=D",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7821831fbb10>, "
+      "ok": true,
+      "read": 20,
+      "kept": 19
     },
     {
       "key": "cnall-middle",
       "org": "충남평생교육정보시스템",
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/lecture/lectureList.do?searchTab=ING&targetCd=E",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7821831fbad0>, "
+      "ok": true,
+      "read": 2,
+      "kept": 2
     },
     {
       "key": "cnall-notice",
       "org": "충남평생교육정보시스템",
       "region": "충남·계룡",
       "url": "https://www.cnall.or.kr/bbs/101/bbsPostList.do",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x782183040e10>, "
+      "ok": true,
+      "read": 20,
+      "kept": 18
     },
     {
       "key": "cnse",
@@ -162,27 +157,25 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 28초 안에 끝나지 않음"
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.cnse.or.kr/main/main.action"
     },
     {
       "key": "cnstc",
       "org": "충청남도교육청안전수련원",
       "region": "충남·계룡",
       "url": "https://www.cnstc.or.kr/main/index.action",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 14,
+      "kept": 3
     },
     {
       "key": "cnis",
       "org": "충청남도교육청해양수련원",
       "region": "충남·계룡",
       "url": "https://www.cnis.go.kr/index.action",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 26,
+      "kept": 13
     },
     {
       "key": "chungmoo",
@@ -192,7 +185,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.chungmoo-ei.or.kr/main/main.action"
     },
     {
       "key": "clehrd",
@@ -202,107 +195,98 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "pass-activity",
       "org": "충청남도청소년활동진흥센터",
       "region": "충남·계룡",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201030000&bid=0039",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 12,
+      "kept": 5
     },
     {
       "key": "pass-counsel",
       "org": "충청남도청소년상담복지센터",
       "region": "충남·계룡",
       "url": "https://cn.pass.or.kr/board.es?mid=a21201020000&bid=0038",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 10,
+      "kept": 0
     },
     {
       "key": "science",
       "org": "국립중앙과학관",
       "region": "대전",
       "url": "https://www.science.go.kr/mps/0/bbs/163/moveBbsNttList.do",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 12,
+      "kept": 12
     },
     {
       "key": "dsecc",
       "org": "대전학생교육문화원",
       "region": "대전",
       "url": "https://dsecc.djsch.kr/djsecc/main.do",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 10,
+      "kept": 7
     },
     {
       "key": "seogu-notice",
       "org": "대전 서구청",
       "region": "대전",
       "url": "https://www.seogu.go.kr/bbs/BBSMSTR_000000000238/list.do",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 20,
+      "kept": 0
     },
     {
       "key": "seogu-exp",
       "org": "대전 서구청",
       "region": "대전",
       "url": "https://www.seogu.go.kr/prog/exprnLnbns/yeyak/sub03_01/list.do",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 2,
+      "kept": 0
     },
     {
       "key": "kriss",
       "org": "한국표준과학연구원",
       "region": "대전",
       "url": "https://www.kriss.re.kr/board.es?mid=a10503000000&bid=0002",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 12,
+      "kept": 0
     },
     {
       "key": "kaeri",
       "org": "한국원자력연구원",
       "region": "대전",
       "url": "https://www.kaeri.re.kr/board?menuId=MENU00332",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 10,
+      "kept": 1
     },
     {
       "key": "kribb",
       "org": "한국생명공학연구원",
       "region": "대전",
       "url": "https://www.kribb.re.kr/kor/sub03/sub03_01_01.jsp",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 10,
+      "kept": 0
     },
     {
       "key": "kaist",
       "org": "KAIST",
       "region": "대전",
       "url": "https://www.kaist.ac.kr/kr/html/footer/0823.html",
-      "ok": false,
-      "read": 0,
-      "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "ok": true,
+      "read": 15,
+      "kept": 1
     },
     {
       "key": "daejeon",
@@ -312,7 +296,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "dje",
@@ -322,7 +307,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "desre",
@@ -332,7 +318,8 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     },
     {
       "key": "ulibrary",
@@ -342,10 +329,84 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 전체 수집 시간이 끝나 이번에는 건너뜀 (지난 공고 유지)"
+      "blocked": true,
+      "error": "robots.txt가 자동 수집을 허용하지 않음"
     }
   ],
   "notices": [
+    {
+      "id": "cnall-elementary-a63aba83c087",
+      "title": "[크리스마스 특강] 도서관에서 함께하는 달콤한 크리스마스 ~ 1부: 산타&루돌프 컵케이크(12/19 13:30~15:00)",
+      "org": "유구도서관 (공주)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-26",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38938",
+      "firstSeen": "2026-11-26",
+      "grades": []
+    },
+    {
+      "id": "cnall-elementary-6a09691da878",
+      "title": "[크리스마스 특강] 도서관에서 함께하는 달콤한 크리스마스 ~ 2부: 겨울 과자집 꾸미기(12/19 15:00~16:30)",
+      "org": "유구도서관 (공주)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-26",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38939",
+      "firstSeen": "2026-11-26",
+      "grades": []
+    },
+    {
+      "id": "cnall-elementary-1be6ad1a26dd",
+      "title": "[크리스마스 특강] 도서관에서 함께하는 달콤한 크리스마스 ~ 1부: 겨울 마카롱 꾸미기(12/12 13:30~15:00)",
+      "org": "유구도서관 (공주)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-26",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38936",
+      "firstSeen": "2026-11-26",
+      "grades": []
+    },
+    {
+      "id": "cnall-elementary-1b64432315c0",
+      "title": "[크리스마스 특강] 도서관에서 함께하는 달콤한 크리스마스 ~ 2부: 먹을 수 있는 스노우볼(12/12 15:00~16:30)",
+      "org": "유구도서관 (공주)",
+      "region": "충남·계룡",
+      "scope": "충남 전체",
+      "date": "2026-11-26",
+      "url": "https://www.cnall.or.kr/lecture/lectureDetail.do?lectureIdx=38937",
+      "firstSeen": "2026-11-26",
+      "grades": []
+    },
+    {
+      "id": "dsecc-b21a0497216f",
+      "title": "[모집] 2026년 마지막「12월 우리 아이 그림책 놀이터」프로그램 신청 안내",
+      "org": "대전학생교육문화원",
+      "region": "대전",
+      "scope": "",
+      "date": "2026-11-25",
+      "url": "https://dsecc.djsch.kr/djsecc/na/ntt/selectNttInfo.do?nttSn=9073&mi=1154&currPage=1&listCo=10",
+      "firstSeen": "2026-11-26",
+      "grades": []
+    },
+    {
+      "id": "cnnse-199-91d3c0eee6a6",
+      "title": "[재안내] 2027.3.1.자 임용 초등 교장공모제 공고문",
+      "org": "충청남도논산계룡교육지원청",
+      "region": "충남·계룡",
+      "scope": "계룡시",
+      "date": "2026-11-24",
+      "url": "https://www.cnnse.go.kr/home/board/brdDetail.do?menu_cd=000199&num=283523",
+      "firstSeen": "2026-11-26",
+      "grades": [
+        "초1",
+        "초2",
+        "초3",
+        "초4",
+        "초5",
+        "초6"
+      ]
+    },
     {
       "id": "cnbl-9a31a983eea6",
       "title": "2026 충청남도교육청 통합전자도서관 만족도 조사 실시 안내",
@@ -382,6 +443,17 @@
         "중2",
         "중3"
       ]
+    },
+    {
+      "id": "dsecc-c669f700e212",
+      "title": "[모집] 12월 1216 해봄 「재능발견」 프로그램(크리스마스 디퓨저 만들기) 안내",
+      "org": "대전학생교육문화원",
+      "region": "대전",
+      "scope": "",
+      "date": "2026-11-23",
+      "url": "https://dsecc.djsch.kr/djsecc/na/ntt/selectNttInfo.do?nttSn=9087&mi=1154&currPage=1&listCo=10",
+      "firstSeen": "2026-11-26",
+      "grades": []
     },
     {
       "id": "chsl-9a31a983eea6",
@@ -436,6 +508,17 @@
       "date": "2026-11-20",
       "url": "https://www.chungnam.go.kr/cnportal/province/province/view.do?nttId=2186404&menuNo=500487&pageIndex=1&cl1CdValue=&sdate=2025-11-23&edate=2026-11-23",
       "firstSeen": "2026-11-21",
+      "grades": []
+    },
+    {
+      "id": "dsecc-99a6d3c2daad",
+      "title": "[모집] 2026년도 겨울특강 「문화예술·창의 체험 프로그램」 수강생 모집",
+      "org": "대전학생교육문화원",
+      "region": "대전",
+      "scope": "",
+      "date": "2026-11-19",
+      "url": "https://dsecc.djsch.kr/djsecc/na/ntt/selectNttInfo.do?nttSn=9083&mi=1154&currPage=1&listCo=10",
+      "firstSeen": "2026-11-26",
       "grades": []
     },
     {
@@ -1506,7 +1589,7 @@
       "region": "대전",
       "scope": "",
       "date": "2026-10-12",
-      "url": "https://www.kaeri.re.kr/board/view?pageNum=1&rowCnt=10&no1=108&linkId=13142&menuId=MENU00332&schType=0&schText=&boardStyle=&categoryId=&continent=&country=&schYear=",
+      "url": "https://www.kaeri.re.kr/board/view?pageNum=1&rowCnt=10&no1=106&linkId=13142&menuId=MENU00332&schType=0&schText=&boardStyle=&categoryId=&continent=&country=&schYear=",
       "firstSeen": "2026-11-09",
       "grades": []
     },
