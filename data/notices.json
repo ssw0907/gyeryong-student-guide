@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "sources": [
     {
       "key": "gyeryong-notice",
@@ -47,7 +47,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7af374b20910>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x78d5be9d5390>, "
     },
     {
       "key": "cnnse-199",
@@ -57,7 +57,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x7af374b31090>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnnse.go.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnnse.go.kr', port=443) at 0x78d5beaddb90>, "
     },
     {
       "key": "chungnam-notice",
@@ -132,7 +132,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7af3747f3350>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x78d5be74f450>, "
     },
     {
       "key": "cnall-middle",
@@ -142,7 +142,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7af3748014d0>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x78d5be74c610>, "
     },
     {
       "key": "cnall-notice",
@@ -152,7 +152,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x7af374849690>, "
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='www.cnall.or.kr', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.cnall.or.kr', port=443) at 0x78d5be731090>, "
     },
     {
       "key": "cnse",
@@ -162,7 +162,7 @@
       "ok": false,
       "read": 0,
       "kept": 0,
-      "error": "TimeoutError: 26초 안에 끝나지 않음"
+      "error": "TimeoutError: 42초 안에 끝나지 않음"
     },
     {
       "key": "cnstc",
